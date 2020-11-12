@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>THREE DREI TRI</title>
+        <title>THREE.js Journey</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
