@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 
-function THREEJourney({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }
 
-export default THREEJourney;
+export default App;

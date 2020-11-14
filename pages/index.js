@@ -6,13 +6,13 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>THREE.js Journey</title>
+        <title>Three.js Fundamentals (R3F Version)</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <section className={styles.grid}>
-          <Link href="/fundamentals">
+          <Link href="/01-fundamentals/">
             <a className={styles.card}>
               <h3>THREE Day 1 &rarr;</h3>
               <p>Fundamentals</p>
