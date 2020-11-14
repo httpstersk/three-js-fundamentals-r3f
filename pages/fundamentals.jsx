@@ -34,12 +34,22 @@ const Camera = () => {
 };
 
 const Scene = () => {
-  const scene = useRef();
+  const mesh = useRef();
+
+  useFrame(() => {
+    if (mesh.current) {
+      mesh.current.updateMatrixWorld();
+      mesh.current.rotation.x += 0.015;
+      mesh.current.rotation.y += 0.015;
+    }
+  });
 
   return (
-    <group ref={scene}>
-      <Box></Box>
-    </group>
+    <mesh ref={mesh}>
+      <Box args={[1, 1, 1]}>
+        <meshPhongMaterial color={0x44aa88} />
+      </Box>
+    </mesh>
   );
 };
 
@@ -47,6 +57,11 @@ export default function Fundamentals() {
   return (
     <Canvas>
       <Scene />
+      <directionalLight
+        color={0xffffff}
+        intensity={1.0}
+        position={[-1, 1, -10]}
+      />
       <OrbitControls />
       <Camera />
     </Canvas>
