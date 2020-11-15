@@ -12,30 +12,30 @@ export default function Home() {
 
       <main className={styles.main}>
         <section className={styles.grid}>
-          <Link href="/01-fundamentals/">
+          <Link href="/01-fundamentals">
             <a className={styles.card}>
-              <h3>THREE Day 1 &rarr;</h3>
+              <h3>THREE 1 &rarr;</h3>
               <p>Fundamentals</p>
             </a>
           </Link>
 
-          <Link href="/primitives">
+          <Link href="/02-responsive">
             <a className={styles.card}>
-              <h3>THREE Day 2 &rarr;</h3>
-              <p>Primitives</p>
+              <h3>THREE 2 &rarr;</h3>
+              <p>Responsive</p>
             </a>
           </Link>
 
           <Link href="/scenegraph">
             <a className={styles.card}>
-              <h3>THREE Day 3 &rarr;</h3>
+              <h3>THREE 3 &rarr;</h3>
               <p>Scenegraph</p>
             </a>
           </Link>
 
           <Link href="/materials">
             <a className={styles.card}>
-              <h3>THREE Day 4 &rarr;</h3>
+              <h3>THREE 4 &rarr;</h3>
               <p>Materials</p>
             </a>
           </Link>
