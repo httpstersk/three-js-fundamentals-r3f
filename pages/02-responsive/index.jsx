@@ -47,7 +47,7 @@ const Cube = (props) => {
 
 export default function Scene() {
   return (
-    <Canvas>
+    <Canvas pixelRatio={Math.min(window.devicePixelRatio, 3) || 1}>
       {CUBES.map(({ _id, color, x }) => {
         return <Cube color={color} ndx={_id} key={_id} position-x={x} />;
       })}

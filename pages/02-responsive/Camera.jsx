@@ -1,34 +1,35 @@
-import { useEffect, useRef } from 'react';
-import { useFrame, useThree } from 'react-three-fiber';
-import { PerspectiveCamera } from 'three';
+import { useEffect, useMemo } from 'react';
+import { useThree } from 'react-three-fiber';
+import { PerspectiveCamera } from '@react-three/drei';
 
-const Camera = () => {
-  const camera = useRef(new PerspectiveCamera());
-  const { setDefaultCamera } = useThree();
+const Camera = ({ ...props }) => {
+  const { gl, camera } = useThree();
+
+  const setSizes = () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    gl.setPixelRatio(window.devicePixelRatio);
+    gl.setSize(window.innerWidth, window.innerHeight, false);
+    camera.updateProjectionMatrix();
+  };
+
+  useMemo(() => {
+    setSizes();
+  }, [setSizes]);
 
   useEffect(() => {
-    if (camera.current) {
-      setDefaultCamera(camera.current);
-    }
+    window.addEventListener('resize', setSizes, false);
+    return () => window.removeEventListener('resize', setSizes);
   }, []);
 
-  useFrame(() => {
-    camera?.current?.updateMatrixWorld();
-  });
-
   return (
-    <perspectiveCamera
+    <PerspectiveCamera
+      {...props}
+      aspect={3}
       fov={75}
-      far={5}
-      near={0.1}
-      name="camera"
-      onUpdate={(self) => {
-        self.lookAt(0, 5, 0);
-        self.updateProjectionMatrix();
-      }}
-      position={[0, 0, -2]}
-      ref={camera}
-    ></perspectiveCamera>
+      makeDefault
+      position={[0, 0, 2]}
+      rotation={[0, 0, 0]}
+    />
   );
 };
 
