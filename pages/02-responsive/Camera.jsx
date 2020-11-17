@@ -6,15 +6,17 @@ const Camera = ({ ...props }) => {
   const { gl, camera } = useThree();
 
   const setSizes = () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    gl.setPixelRatio(window.devicePixelRatio);
-    gl.setSize(window.innerWidth, window.innerHeight, false);
-    camera.updateProjectionMatrix();
+    if (typeof window !== 'undefined') {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      gl.setPixelRatio(window.devicePixelRatio);
+      gl.setSize(window.innerWidth, window.innerHeight, false);
+      camera.updateProjectionMatrix();
+    }
   };
 
-  useMemo(() => {
+  useEffect(() => {
     setSizes();
-  }, [setSizes]);
+  }, []);
 
   useEffect(() => {
     window.addEventListener('resize', setSizes, false);
