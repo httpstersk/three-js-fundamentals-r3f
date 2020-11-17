@@ -31,7 +31,7 @@ const Cube = ({ ...props }) => {
   useFrame(() => {
     if (mesh.current) {
       const speed = 1 + ndx * 0.1;
-      const rot = 0.015 * speed;
+      const rot = 0.01 * speed;
       mesh.current.rotation.x += rot;
       mesh.current.rotation.y += rot;
     }

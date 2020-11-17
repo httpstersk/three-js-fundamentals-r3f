@@ -26,14 +26,14 @@ export default function Home() {
             </a>
           </Link>
 
-          <Link href="/scenegraph">
+          <Link href="/03-primitives">
             <a className={styles.card}>
               <h3>THREE 3 &rarr;</h3>
-              <p>Scenegraph</p>
+              <p>Primitives</p>
             </a>
           </Link>
 
-          <Link href="/materials">
+          <Link href="/04-materials">
             <a className={styles.card}>
               <h3>THREE 4 &rarr;</h3>
               <p>Materials</p>
