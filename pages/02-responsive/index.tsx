@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import { Canvas, useFrame } from 'react-three-fiber';
 import { Box, OrbitControls } from '@react-three/drei';
+import { Mesh } from 'three';
 
 const Camera = dynamic(() => import('./Camera'), { ssr: false });
 
@@ -23,9 +24,9 @@ const CUBES = [
   },
 ];
 
-const Cube = (props) => {
+const Cube = ({ ...props }) => {
   const { color, ndx } = props;
-  const mesh = useRef();
+  const mesh = useRef<Mesh>();
 
   useFrame(() => {
     if (mesh.current) {
