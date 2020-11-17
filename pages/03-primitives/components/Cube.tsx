@@ -4,8 +4,11 @@ import { Box } from '@react-three/drei';
 import { Mesh } from 'three';
 import { SPEED_ROTATION } from '../constants';
 
-const Cube = ({ ...props }) => {
+export default function BoxGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
+  const width = 1;
+  const height = 1;
+  const depth = 1;
 
   useFrame(() => {
     if (mesh.current) {
@@ -16,11 +19,9 @@ const Cube = ({ ...props }) => {
 
   return (
     <mesh {...props} ref={mesh}>
-      <Box args={[1, 1, 1]}>
+      <Box args={[width, height, depth]}>
         <meshPhongMaterial attach="material" color="hotpink" />
       </Box>
     </mesh>
   );
-};
-
-export default Cube;
+}

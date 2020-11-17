@@ -1,13 +1,13 @@
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
-import Cube from './components/Box';
-import FlatCircle from './components/FlatCircle';
+import { Cone, Cube, FlatCircle } from './components';
 
 export default function Scene() {
   return (
     <Canvas camera={{ position: [0, 0, 4] }}>
       {/* <Cube /> */}
-      <FlatCircle />
+      {/* <FlatCircle /> */}
+      <Cone />
 
       <directionalLight
         color={0xffffff}

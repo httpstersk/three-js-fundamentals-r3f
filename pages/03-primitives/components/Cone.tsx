@@ -1,15 +1,18 @@
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { Circle } from '@react-three/drei';
+import { Cone } from '@react-three/drei';
 import { Mesh } from 'three';
 import { SPEED_ROTATION } from '../constants';
 
-export default function CircleGeometry({ ...props }) {
+export default function ConeGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
   const radius = 1;
-  const segments = 24;
+  const height = 1;
+  const radialSegments = 16;
 
   // Defaults ↓
+  const heightSegments = 1;
+  const openEnded = false;
   const thetaStart = 0;
   const thetaLength = 2 * Math.PI;
 
@@ -22,9 +25,19 @@ export default function CircleGeometry({ ...props }) {
 
   return (
     <mesh {...props} ref={mesh}>
-      <Circle args={[radius, segments, thetaStart, thetaLength]}>
-        <meshPhongMaterial attach="material" color="gold" />
-      </Circle>
+      <Cone
+        args={[
+          radius,
+          height,
+          radialSegments,
+          heightSegments,
+          openEnded,
+          thetaStart,
+          thetaLength,
+        ]}
+      >
+        <meshPhongMaterial attach="material" color="hotpink" />
+      </Cone>
     </mesh>
   );
 }
