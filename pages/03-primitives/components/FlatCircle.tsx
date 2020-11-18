@@ -6,7 +6,7 @@ import { SPEED_ROTATION } from '../constants';
 
 export default function CircleGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
-  const radius = 1;
+  const radius = 0.75;
   const segments = 24;
 
   // Defaults ↓

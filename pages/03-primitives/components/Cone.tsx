@@ -6,8 +6,8 @@ import { SPEED_ROTATION } from '../constants';
 
 export default function ConeGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
-  const radius = 1;
-  const height = 1;
+  const radius = 0.75;
+  const height = 1.5;
   const radialSegments = 16;
 
   // Defaults ↓
