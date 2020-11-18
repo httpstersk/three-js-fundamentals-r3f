@@ -5,7 +5,15 @@ import { Cone, Cube, Cylinder, FlatCircle } from './components';
 
 export default function Scene() {
   return (
-    <Canvas camera={{ position: [0, 0, 4] }}>
+    <Canvas
+      camera={{
+        position: [0, 0, 120],
+        fov: 40,
+        aspect: 2,
+        near: 0.1,
+        far: 1000,
+      }}
+    >
       <Flex
         alignItems="center"
         flexDirection="row"
