@@ -3,6 +3,7 @@ import { useFrame } from 'react-three-fiber';
 import { Cylinder } from '@react-three/drei';
 import { Mesh } from 'three';
 import { SPEED_ROTATION } from '../constants';
+import { rotateMesh } from '../utils';
 
 export default function CylinderGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
@@ -17,12 +18,7 @@ export default function CylinderGeometry({ ...props }) {
   const thetaStart = 0;
   const thetaLength = 2 * Math.PI;
 
-  useFrame(() => {
-    if (mesh.current) {
-      mesh.current.rotation.x += SPEED_ROTATION;
-      mesh.current.rotation.y += SPEED_ROTATION;
-    }
-  });
+  useFrame(() => rotateMesh(mesh));
 
   return (
     <mesh {...props} ref={mesh}>
