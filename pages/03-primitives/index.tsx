@@ -1,7 +1,7 @@
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Flex, Box } from '@react-three/flex';
-import { Cone, Cube, FlatCircle } from './components';
+import { Cone, Cube, Cylinder, FlatCircle } from './components';
 
 export default function Scene() {
   return (
@@ -20,6 +20,9 @@ export default function Scene() {
         </Box>
         <Box centerAnchor>
           <Cone />
+        </Box>
+        <Box centerAnchor>
+          <Cylinder />
         </Box>
       </Flex>
 

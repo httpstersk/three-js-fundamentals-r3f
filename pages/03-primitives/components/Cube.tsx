@@ -6,9 +6,9 @@ import { SPEED_ROTATION } from '../constants';
 
 export default function BoxGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
-  const width = 1;
-  const height = 1;
-  const depth = 1;
+  const width = 0.85;
+  const height = 0.85;
+  const depth = 0.85;
 
   useFrame(() => {
     if (mesh.current) {
