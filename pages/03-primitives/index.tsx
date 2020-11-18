@@ -1,7 +1,7 @@
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
-import { Flex, Box } from '@react-three/flex';
-import { Cone, Cube, Cylinder, FlatCircle } from './components';
+import { Flex } from '@react-three/flex';
+import { Cone, Cube, Cylinder, Example, FlatCircle } from './components';
 
 export default function Scene() {
   return (
@@ -14,24 +14,22 @@ export default function Scene() {
         far: 1000,
       }}
     >
-      <Flex
-        alignItems="center"
-        flexDirection="row"
-        justifyContent="center"
-        padding={1}
-      >
-        <Box centerAnchor>
+      <Flex alignItems="center" flexDirection="row" justifyContent="center">
+        <Example>
           <Cube />
-        </Box>
-        <Box centerAnchor>
+        </Example>
+
+        <Example>
           <FlatCircle />
-        </Box>
-        <Box centerAnchor>
+        </Example>
+
+        <Example>
           <Cone />
-        </Box>
-        <Box centerAnchor>
+        </Example>
+
+        <Example>
           <Cylinder />
-        </Box>
+        </Example>
       </Flex>
 
       <directionalLight
