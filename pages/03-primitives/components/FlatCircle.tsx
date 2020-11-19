@@ -19,7 +19,7 @@ export default function CircleGeometry({ ...props }) {
   return (
     <mesh {...props} ref={mesh}>
       <Circle args={[radius, segments, thetaStart, thetaLength]}>
-        <meshPhongMaterial attach="material" color="gold" />
+        <meshPhongMaterial attach="material" color="hotpink" />
       </Circle>
     </mesh>
   );
