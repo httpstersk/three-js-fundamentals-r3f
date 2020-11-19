@@ -9,6 +9,7 @@ import {
   Example,
   Extrude,
   FlatCircle,
+  Icosahedron,
 } from './components';
 
 export default function Scene() {
@@ -45,6 +46,10 @@ export default function Scene() {
 
         <Example>
           <Extrude />
+        </Example>
+
+        <Example>
+          <Icosahedron />
         </Example>
       </Flex>
 
