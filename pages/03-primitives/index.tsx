@@ -1,7 +1,14 @@
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Flex } from '@react-three/flex';
-import { Cone, Cube, Cylinder, Example, FlatCircle } from './components';
+import {
+  Cone,
+  Cube,
+  Cylinder,
+  Dodecahedron,
+  Example,
+  FlatCircle,
+} from './components';
 
 export default function Scene() {
   return (
@@ -29,6 +36,10 @@ export default function Scene() {
 
         <Example>
           <Cylinder />
+        </Example>
+
+        <Example>
+          <Dodecahedron />
         </Example>
       </Flex>
 
