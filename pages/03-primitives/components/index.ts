@@ -6,3 +6,4 @@ export { default as Example } from './Example';
 export { default as Extrude } from './Extrude';
 export { default as FlatCircle } from './FlatCircle';
 export { default as Icosahedron } from './Icosahedron';
+export { default as Lathe } from './Lathe';

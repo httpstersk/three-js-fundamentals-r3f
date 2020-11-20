@@ -6,6 +6,7 @@ import { rotateMesh } from '../utils';
 
 export default function ExtrudeGeometry({ ...props }) {
   const mesh = useRef<THREE.Mesh>();
+
   const shape = useMemo(() => {
     const _shape = new THREE.Shape();
     const x = -2.5;
