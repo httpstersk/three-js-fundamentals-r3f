@@ -8,3 +8,4 @@ export { default as FlatCircle } from './FlatCircle';
 export { default as Icosahedron } from './Icosahedron';
 export { default as Lathe } from './Lathe';
 export { default as Octahedron } from './Octahedron';
+export { default as Parametric } from './Parametric';

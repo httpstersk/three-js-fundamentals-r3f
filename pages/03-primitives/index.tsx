@@ -11,6 +11,7 @@ import {
   FlatCircle,
   Icosahedron,
   Octahedron,
+  Parametric,
 } from './components';
 
 export default function Scene() {
@@ -55,6 +56,10 @@ export default function Scene() {
 
         <Example>
           <Octahedron />
+        </Example>
+
+        <Example>
+          <Parametric />
         </Example>
       </Flex>
 
