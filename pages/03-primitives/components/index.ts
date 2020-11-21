@@ -9,3 +9,4 @@ export { default as Icosahedron } from './Icosahedron';
 export { default as Lathe } from './Lathe';
 export { default as Octahedron } from './Octahedron';
 export { default as Parametric } from './Parametric';
+export { default as Plane } from './Plane';

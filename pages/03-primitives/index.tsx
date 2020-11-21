@@ -12,6 +12,7 @@ import {
   Icosahedron,
   Octahedron,
   Parametric,
+  Plane,
 } from './components';
 
 export default function Scene() {
@@ -64,6 +65,10 @@ export default function Scene() {
       <Flex flexDirection="row" alignItems="flex-start" justifyContent="center">
         <Example>
           <Parametric />
+        </Example>
+
+        <Example>
+          <Plane />
         </Example>
       </Flex>
 
