@@ -25,7 +25,7 @@ export default function Scene() {
         far: 1000,
       }}
     >
-      <Flex alignItems="center" flexDirection="row" justifyContent="center">
+      <Flex flexDirection="row" alignItems="flex-end" justifyContent="center">
         <Example>
           <Cube />
         </Example>
@@ -41,13 +41,15 @@ export default function Scene() {
         <Example>
           <Cylinder />
         </Example>
+      </Flex>
 
+      <Flex flexDirection="row" alignItems="center" justifyContent="center">
         <Example>
-          <Dodecahedron />
+          <Extrude />
         </Example>
 
         <Example>
-          <Extrude />
+          <Dodecahedron />
         </Example>
 
         <Example>
@@ -57,7 +59,9 @@ export default function Scene() {
         <Example>
           <Octahedron />
         </Example>
+      </Flex>
 
+      <Flex flexDirection="row" alignItems="flex-start" justifyContent="center">
         <Example>
           <Parametric />
         </Example>
