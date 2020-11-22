@@ -13,7 +13,8 @@ import {
   Octahedron,
   Parametric,
   Plane,
-  Polyhedron
+  Polyhedron,
+  Ring,
 } from './components';
 
 export default function Scene() {
@@ -74,6 +75,10 @@ export default function Scene() {
 
         <Example>
           <Polyhedron />
+        </Example>
+
+        <Example>
+          <Ring />
         </Example>
       </Flex>
 
