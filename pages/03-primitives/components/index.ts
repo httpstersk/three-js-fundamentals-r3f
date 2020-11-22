@@ -12,3 +12,4 @@ export { default as Parametric } from './Parametric';
 export { default as Plane } from './Plane';
 export { default as Polyhedron } from './Polyhedron';
 export { default as Ring } from './Ring';
+export { default as Sphere } from './Sphere';

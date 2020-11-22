@@ -1,0 +1,39 @@
+import { useRef } from 'react';
+import { useFrame } from 'react-three-fiber';
+import { Sphere } from '@react-three/drei';
+import { Mesh } from 'three';
+import { EXAMPLES_RADIUS } from '../constants';
+import { rotateMesh } from '../utils';
+
+export default function SphereGeometry({ ...props }) {
+  const mesh = useRef<Mesh>();
+  const radius = EXAMPLES_RADIUS;
+  const widthSegments = 12;
+  const heightSegments = 8;
+
+  // Defaults ↓
+  const phiStart = 0;
+  const phiLength = 2 * Math.PI;
+  const thetaStart = 0;
+  const thetaLength = Math.PI;
+
+  useFrame(() => rotateMesh(mesh));
+
+  return (
+    <mesh {...props} ref={mesh}>
+      <Sphere
+        args={[
+          radius,
+          widthSegments,
+          heightSegments,
+          phiStart,
+          phiLength,
+          thetaStart,
+          thetaLength,
+        ]}
+      >
+        <meshPhongMaterial attach="material" color="hotpink" />
+      </Sphere>
+    </mesh>
+  );
+}

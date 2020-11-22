@@ -15,6 +15,7 @@ import {
   Plane,
   Polyhedron,
   Ring,
+  Sphere,
 } from './components';
 
 export default function Scene() {
@@ -79,6 +80,10 @@ export default function Scene() {
 
         <Example>
           <Ring />
+        </Example>
+
+        <Example>
+          <Sphere />
         </Example>
       </Flex>
 
