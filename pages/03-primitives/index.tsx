@@ -1,6 +1,5 @@
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
-import { Flex } from '@react-three/flex';
 import {
   Cone,
   Cube,
@@ -15,6 +14,7 @@ import {
   Plane,
   Polyhedron,
   Ring,
+  Row,
   Sphere,
 } from './components';
 
@@ -29,7 +29,7 @@ export default function Scene() {
         far: 1000,
       }}
     >
-      <Flex flexDirection="row" alignItems="flex-end" justifyContent="center">
+      <Row align="flex-end">
         <Example>
           <Cube />
         </Example>
@@ -45,9 +45,9 @@ export default function Scene() {
         <Example>
           <Cylinder />
         </Example>
-      </Flex>
+      </Row>
 
-      <Flex flexDirection="row" alignItems="center" justifyContent="center">
+      <Row align="center">
         <Example>
           <Extrude />
         </Example>
@@ -63,9 +63,9 @@ export default function Scene() {
         <Example>
           <Octahedron />
         </Example>
-      </Flex>
+      </Row>
 
-      <Flex flexDirection="row" alignItems="flex-start" justifyContent="center">
+      <Row align="flex-start">
         <Example>
           <Parametric />
         </Example>
@@ -85,7 +85,7 @@ export default function Scene() {
         <Example>
           <Sphere />
         </Example>
-      </Flex>
+      </Row>
 
       <directionalLight
         color={0xffffff}
