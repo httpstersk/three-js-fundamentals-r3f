@@ -14,3 +14,4 @@ export { default as Polyhedron } from './Polyhedron';
 export { default as Ring } from './Ring';
 export { default as Row } from './Row';
 export { default as Sphere } from './Sphere';
+export { default as Tetrahedron } from './Tetrahedron';

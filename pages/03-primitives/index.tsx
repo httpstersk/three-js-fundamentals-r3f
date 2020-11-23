@@ -16,6 +16,7 @@ import {
   Ring,
   Row,
   Sphere,
+  Tetrahedron,
 } from './components';
 
 export default function Scene() {
@@ -45,27 +46,25 @@ export default function Scene() {
         <Example>
           <Cylinder />
         </Example>
-      </Row>
-
-      <Row align="center">
-        <Example>
-          <Extrude />
-        </Example>
 
         <Example>
           <Dodecahedron />
         </Example>
 
         <Example>
-          <Icosahedron />
+          <Extrude />
         </Example>
 
         <Example>
-          <Octahedron />
+          <Icosahedron />
         </Example>
       </Row>
 
-      <Row align="flex-start">
+      <Row align="center">
+        <Example>
+          <Octahedron />
+        </Example>
+
         <Example>
           <Parametric />
         </Example>
@@ -85,7 +84,13 @@ export default function Scene() {
         <Example>
           <Sphere />
         </Example>
+
+        <Example>
+          <Tetrahedron />
+        </Example>
       </Row>
+
+      <Row align="flex-start"></Row>
 
       <directionalLight
         color={0xffffff}

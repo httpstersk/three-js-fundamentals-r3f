@@ -1,4 +1,5 @@
 import { Align, Flex } from '@react-three/flex';
+import { EXAMPLES_PADDING } from '../constants';
 
 export default function Row({ align, children, ...props }) {
   return (
@@ -6,6 +7,7 @@ export default function Row({ align, children, ...props }) {
       alignItems={align}
       flexDirection="row"
       justifyContent="center"
+      padding={EXAMPLES_PADDING}
       {...props}
     >
       {children}
