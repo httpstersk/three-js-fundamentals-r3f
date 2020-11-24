@@ -17,3 +17,4 @@ export { default as Sphere } from './Sphere';
 export { default as Tetrahedron } from './Tetrahedron';
 export { default as Text } from './Text';
 export { default as Torus } from './Torus';
+export { default as TorusKnot } from './TorusKnot';

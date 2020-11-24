@@ -19,6 +19,7 @@ import {
   Tetrahedron,
   Text,
   Torus,
+  TorusKnot,
 } from './components';
 
 export default function Scene() {
@@ -103,6 +104,10 @@ export default function Scene() {
 
         <Example>
           <Torus />
+        </Example>
+
+        <Example>
+          <TorusKnot />
         </Example>
       </Row>
 
