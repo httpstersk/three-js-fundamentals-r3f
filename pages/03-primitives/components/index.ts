@@ -16,3 +16,4 @@ export { default as Row } from './Row';
 export { default as Sphere } from './Sphere';
 export { default as Tetrahedron } from './Tetrahedron';
 export { default as Text } from './Text';
+export { default as Torus } from './Torus';
