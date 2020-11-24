@@ -17,6 +17,7 @@ import {
   Row,
   Sphere,
   Tetrahedron,
+  Text,
 } from './components';
 
 export default function Scene() {
@@ -90,7 +91,15 @@ export default function Scene() {
         </Example>
       </Row>
 
-      <Row align="flex-start"></Row>
+      <Row align="flex-start">
+        <Example>
+          <Tetrahedron />
+        </Example>
+
+        <Example>
+          <Text />
+        </Example>
+      </Row>
 
       <directionalLight
         color={0xffffff}
