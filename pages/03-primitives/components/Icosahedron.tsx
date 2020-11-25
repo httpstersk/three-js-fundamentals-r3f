@@ -3,7 +3,7 @@ import { useFrame } from 'react-three-fiber';
 import { Icosahedron } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
 import { EXAMPLES_RADIUS } from '../constants';
-import { rotateMesh } from '../utils';
+import { getRandomColor, rotateMesh } from '../utils';
 
 export default function IcosahedronGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
@@ -17,7 +17,7 @@ export default function IcosahedronGeometry({ ...props }) {
   return (
     <mesh {...props} ref={mesh}>
       <Icosahedron args={[radius, detail]}>
-        <meshPhongMaterial side={DoubleSide} color="hotpink" />
+        <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
       </Icosahedron>
     </mesh>
   );

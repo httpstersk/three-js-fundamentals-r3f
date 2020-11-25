@@ -3,7 +3,7 @@ import { useFrame } from 'react-three-fiber';
 import { Parametric } from '@react-three/drei';
 import { ParametricGeometries } from 'three-full';
 import { DoubleSide, Mesh } from 'three';
-import { rotateMesh } from '../utils';
+import { getRandomColor, rotateMesh } from '../utils';
 
 export default function ParametricGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
@@ -15,11 +15,7 @@ export default function ParametricGeometry({ ...props }) {
   return (
     <mesh {...props} ref={mesh}>
       <Parametric args={[ParametricGeometries.klein, slices, stacks]}>
-        <meshPhongMaterial
-          side={DoubleSide}
-          color="hotpink"
-          side={DoubleSide}
-        />
+        <meshPhongMaterial color={getRandomColor()} side={DoubleSide} />
       </Parametric>
     </mesh>
   );

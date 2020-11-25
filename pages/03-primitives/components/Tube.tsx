@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Tube } from '@react-three/drei';
 import { Curve, DoubleSide, Mesh, Vector3 } from 'three';
-import { rotateMesh } from '../utils';
+import { getRandomColor, rotateMesh } from '../utils';
 
 class CustomSinCurve extends Curve {
   private scale: number;
@@ -37,7 +37,7 @@ export default function TubeGeometry({ ...props }) {
       <Tube args={[path, tubularSegments, radius, radialSegments, closed]}>
         <meshPhongMaterial
           side={DoubleSide}
-          color="hotpink"
+          color={getRandomColor()}
           side={DoubleSide}
         />
       </Tube>

@@ -3,7 +3,7 @@ import { useFrame } from 'react-three-fiber';
 import { Cone } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
 import { EXAMPLES_HEIGHT } from '../constants';
-import { rotateMesh } from '../utils';
+import { getRandomColor, rotateMesh } from '../utils';
 
 export default function ConeGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
@@ -32,7 +32,7 @@ export default function ConeGeometry({ ...props }) {
           thetaLength,
         ]}
       >
-        <meshPhongMaterial side={DoubleSide} color="hotpink" />
+        <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
       </Cone>
     </mesh>
   );

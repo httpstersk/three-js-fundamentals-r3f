@@ -3,7 +3,7 @@ import { useFrame } from 'react-three-fiber';
 import { Box } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
 import { EXAMPLES_HEIGHT } from '../constants';
-import { rotateMesh } from '../utils';
+import { getRandomColor, rotateMesh } from '../utils';
 
 export default function BoxGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
@@ -16,7 +16,7 @@ export default function BoxGeometry({ ...props }) {
   return (
     <mesh {...props} ref={mesh}>
       <Box args={[width, height, depth]}>
-        <meshPhongMaterial side={DoubleSide} color="hotpink" />
+        <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
       </Box>
     </mesh>
   );

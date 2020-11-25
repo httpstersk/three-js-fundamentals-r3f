@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { TorusKnot } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
-import { rotateMesh } from '../utils';
+import { getRandomColor, rotateMesh } from '../utils';
 
 export default function TorusKnotGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
@@ -22,7 +22,7 @@ export default function TorusKnotGeometry({ ...props }) {
       <TorusKnot
         args={[radius, tubeRadius, radialSegments, tubularSegments, p, q]}
       >
-        <meshPhongMaterial side={DoubleSide} color="hotpink" />
+        <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
       </TorusKnot>
     </mesh>
   );

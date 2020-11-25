@@ -3,7 +3,7 @@ import { useFrame } from 'react-three-fiber';
 import { Cylinder } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
 import { EXAMPLES_HEIGHT } from '../constants';
-import { rotateMesh } from '../utils';
+import { getRandomColor, rotateMesh } from '../utils';
 
 export default function CylinderGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
@@ -34,7 +34,7 @@ export default function CylinderGeometry({ ...props }) {
           thetaLength,
         ]}
       >
-        <meshPhongMaterial side={DoubleSide} color="hotpink" />
+        <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
       </Cylinder>
     </mesh>
   );

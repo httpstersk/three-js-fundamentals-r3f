@@ -3,7 +3,7 @@ import { useFrame } from 'react-three-fiber';
 import { Dodecahedron } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
 import { EXAMPLES_RADIUS } from '../constants';
-import { rotateMesh } from '../utils';
+import { getRandomColor, rotateMesh } from '../utils';
 
 export default function DodecahedronGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
@@ -17,7 +17,7 @@ export default function DodecahedronGeometry({ ...props }) {
   return (
     <mesh {...props} ref={mesh}>
       <Dodecahedron args={[radius, detail]}>
-        <meshPhongMaterial side={DoubleSide} color="hotpink" />
+        <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
       </Dodecahedron>
     </mesh>
   );

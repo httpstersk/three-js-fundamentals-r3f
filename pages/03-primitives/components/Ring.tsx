@@ -3,7 +3,7 @@ import { useFrame } from 'react-three-fiber';
 import { Ring } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
 import { EXAMPLES_RADIUS } from '../constants';
-import { rotateMesh } from '../utils';
+import { getRandomColor, rotateMesh } from '../utils';
 
 export default function RingGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
@@ -30,7 +30,7 @@ export default function RingGeometry({ ...props }) {
           thetaLength,
         ]}
       >
-        <meshPhongMaterial side={DoubleSide} color="hotpink" />
+        <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
       </Ring>
     </mesh>
   );
