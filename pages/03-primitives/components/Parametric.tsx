@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Parametric } from '@react-three/drei';
 import { ParametricGeometries } from 'three-full';
-import { Mesh, Vector3 } from 'three';
+import { DoubleSide, Mesh } from 'three';
 import { rotateMesh } from '../utils';
 
 export default function ParametricGeometry({ ...props }) {
@@ -15,7 +15,11 @@ export default function ParametricGeometry({ ...props }) {
   return (
     <mesh {...props} ref={mesh}>
       <Parametric args={[ParametricGeometries.klein, slices, stacks]}>
-        <meshPhongMaterial attach="material" color="hotpink" />
+        <meshPhongMaterial
+          attach="material"
+          color="hotpink"
+          side={DoubleSide}
+        />
       </Parametric>
     </mesh>
   );

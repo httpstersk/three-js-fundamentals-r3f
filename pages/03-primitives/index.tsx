@@ -20,6 +20,7 @@ import {
   Text,
   Torus,
   TorusKnot,
+  Tube,
 } from './components';
 
 export default function Scene() {
@@ -108,6 +109,10 @@ export default function Scene() {
 
         <Example>
           <TorusKnot />
+        </Example>
+
+        <Example>
+          <Tube />
         </Example>
       </Row>
 

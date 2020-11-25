@@ -6,10 +6,10 @@ import { rotateMesh } from '../utils';
 
 export default function TorusKnotGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
-  const radius = 5;
-  const tubeRadius = 2;
-  const radialSegments = 8;
-  const tubularSegments = 24;
+  const radius = 3.5;
+  const tubeRadius = 1.5;
+  const radialSegments = 24;
+  const tubularSegments = 64;
 
   // Defaults ↓
   const p = 2;
