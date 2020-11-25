@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Lathe } from '@react-three/drei';
-import { Mesh, Vector2 } from 'three';
+import { DoubleSide, Mesh, Vector2 } from 'three';
 import { rotateMesh } from '../utils';
 
 export default function LatheGeometry({ ...props }) {
@@ -25,7 +25,7 @@ export default function LatheGeometry({ ...props }) {
   return (
     <mesh {...props} ref={mesh}>
       <Lathe args={[points, segments, phiStart, phiLength]}>
-        <meshPhongMaterial attach="material" color="hotpink" />
+        <meshPhongMaterial side={DoubleSide} color="hotpink" />
       </Lathe>
     </mesh>
   );

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Torus } from '@react-three/drei';
-import { Mesh } from 'three';
+import { DoubleSide, Mesh } from 'three';
 import { rotateMesh } from '../utils';
 
 export default function TorusGeometry({ ...props }) {
@@ -18,7 +18,7 @@ export default function TorusGeometry({ ...props }) {
   return (
     <mesh {...props} ref={mesh}>
       <Torus args={[radius, tubeRadius, radialSegments, tubularSegments]}>
-        <meshPhongMaterial attach="material" color="hotpink" />
+        <meshPhongMaterial side={DoubleSide} color="hotpink" />
       </Torus>
     </mesh>
   );

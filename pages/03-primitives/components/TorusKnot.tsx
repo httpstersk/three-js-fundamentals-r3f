@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { TorusKnot } from '@react-three/drei';
-import { Mesh } from 'three';
+import { DoubleSide, Mesh } from 'three';
 import { rotateMesh } from '../utils';
 
 export default function TorusKnotGeometry({ ...props }) {
@@ -22,7 +22,7 @@ export default function TorusKnotGeometry({ ...props }) {
       <TorusKnot
         args={[radius, tubeRadius, radialSegments, tubularSegments, p, q]}
       >
-        <meshPhongMaterial attach="material" color="hotpink" />
+        <meshPhongMaterial side={DoubleSide} color="hotpink" />
       </TorusKnot>
     </mesh>
   );

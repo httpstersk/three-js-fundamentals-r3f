@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Ring } from '@react-three/drei';
-import { Mesh } from 'three';
+import { DoubleSide, Mesh } from 'three';
 import { EXAMPLES_RADIUS } from '../constants';
 import { rotateMesh } from '../utils';
 
@@ -30,7 +30,7 @@ export default function RingGeometry({ ...props }) {
           thetaLength,
         ]}
       >
-        <meshPhongMaterial attach="material" color="hotpink" />
+        <meshPhongMaterial side={DoubleSide} color="hotpink" />
       </Ring>
     </mesh>
   );

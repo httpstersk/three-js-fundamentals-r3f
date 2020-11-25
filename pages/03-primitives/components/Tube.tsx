@@ -36,7 +36,7 @@ export default function TubeGeometry({ ...props }) {
     <mesh {...props} ref={mesh}>
       <Tube args={[path, tubularSegments, radius, radialSegments, closed]}>
         <meshPhongMaterial
-          attach="material"
+          side={DoubleSide}
           color="hotpink"
           side={DoubleSide}
         />

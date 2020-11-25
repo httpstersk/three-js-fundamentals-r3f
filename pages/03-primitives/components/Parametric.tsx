@@ -16,7 +16,7 @@ export default function ParametricGeometry({ ...props }) {
     <mesh {...props} ref={mesh}>
       <Parametric args={[ParametricGeometries.klein, slices, stacks]}>
         <meshPhongMaterial
-          attach="material"
+          side={DoubleSide}
           color="hotpink"
           side={DoubleSide}
         />

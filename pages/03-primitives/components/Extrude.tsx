@@ -1,14 +1,14 @@
 import { useMemo, useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Extrude } from '@react-three/drei';
-import * as THREE from 'three';
+import { DoubleSide, Mesh, Shape } from 'three';
 import { rotateMesh } from '../utils';
 
 export default function ExtrudeGeometry({ ...props }) {
-  const mesh = useRef<THREE.Mesh>();
+  const mesh = useRef<Mesh>();
 
   const shape = useMemo(() => {
-    const _shape = new THREE.Shape();
+    const _shape = new Shape();
     const x = -2.5;
     const y = -5;
     _shape.moveTo(x + 2.5, y + 2.5);
@@ -40,7 +40,7 @@ export default function ExtrudeGeometry({ ...props }) {
   return (
     <mesh {...props} ref={mesh}>
       <Extrude args={[shape, extrudeSettings]}>
-        <meshPhongMaterial attach="material" color="hotpink" />
+        <meshPhongMaterial side={DoubleSide} color="hotpink" />
       </Extrude>
     </mesh>
   );
