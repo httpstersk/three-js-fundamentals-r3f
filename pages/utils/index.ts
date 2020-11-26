@@ -8,4 +8,16 @@ export const rotateMesh = (meshRef) => {
   }
 };
 
+export const rotateMeshX = (meshRef, speed = SPEED_ROTATION) => {
+  if (meshRef.current) {
+    meshRef.current.rotation.x += speed;
+  }
+};
+
+export const rotateMeshY = (meshRef, speed = SPEED_ROTATION) => {
+  if (meshRef.current) {
+    meshRef.current.rotation.y += speed;
+  }
+};
+
 export const getRandomColor = () => randomColor({ hue: '#00FFFF', count: 18 });

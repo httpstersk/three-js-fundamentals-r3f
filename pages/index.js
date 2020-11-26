@@ -33,10 +33,10 @@ export default function Home() {
             </a>
           </Link>
 
-          <Link href="/04-materials">
+          <Link href="/04-scenegraph">
             <a className={styles.card}>
               <h3>THREE 4 &rarr;</h3>
-              <p>Materials</p>
+              <p>Scenegraph</p>
             </a>
           </Link>
         </section>

@@ -1,5 +1,5 @@
 import { Flex } from '@react-three/flex';
-import { EXAMPLES_PADDING } from '../constants';
+import { EXAMPLES_PADDING } from '../../constants';
 
 export default function Row({ align, children, ...props }) {
   return (

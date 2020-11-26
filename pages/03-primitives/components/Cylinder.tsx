@@ -2,8 +2,8 @@ import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Cylinder } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
-import { EXAMPLES_HEIGHT } from '../constants';
-import { getRandomColor, rotateMesh } from '../utils';
+import { EXAMPLES_HEIGHT } from '../../constants';
+import { getRandomColor, rotateMesh } from '../../utils';
 
 export default function CylinderGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
