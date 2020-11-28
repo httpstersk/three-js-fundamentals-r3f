@@ -5,11 +5,12 @@ import { Color, Mesh } from 'three';
 import { rotateMeshY } from '../../utils';
 
 interface IProps {
+  color: Color;
   emissive: Color;
   props: any;
 }
 
-export default function Sun({ children, emissive, ...props }: IProps) {
+export default function Sun({ color, emissive, ...props }: IProps) {
   const mesh = useRef<Mesh>();
   const radius = 1;
   const widthSegments = 6;
@@ -20,10 +21,8 @@ export default function Sun({ children, emissive, ...props }: IProps) {
   return (
     <mesh {...props} ref={mesh}>
       <Sphere args={[radius, widthSegments, heightSegments]}>
-        <meshPhongMaterial emissive={emissive} />
+        <meshPhongMaterial color={color} emissive={emissive} />
       </Sphere>
-
-      {children}
     </mesh>
   );
 }
