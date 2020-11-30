@@ -1,33 +1,33 @@
 import { MutableRefObject } from 'react';
-import { Mesh, Object3D } from 'three';
+import { Mesh, Group } from 'three';
 import { SPEED_ROTATION } from '../constants';
 import { randomColor } from 'randomcolor';
 
-export const isMesh = (node: Object3D): node is Mesh => {
+export const isMesh = (node: Group): node is Mesh => {
   return !!(node as Mesh).geometry;
 };
 
-export const rotateMesh = (meshRef: MutableRefObject<Mesh | Object3D>) => {
-  if (meshRef.current && isMesh(meshRef.current)) {
+export const rotateMesh = (meshRef: MutableRefObject<Mesh | Group>) => {
+  if (meshRef.current) {
     meshRef.current.rotation.x += SPEED_ROTATION;
     meshRef.current.rotation.y += SPEED_ROTATION;
   }
 };
 
 export const rotateMeshX = (
-  meshRef: MutableRefObject<Mesh | Object3D>,
+  meshRef: MutableRefObject<Mesh | Group>,
   speed = SPEED_ROTATION
 ) => {
-  if (meshRef.current && isMesh(meshRef.current)) {
+  if (meshRef.current) {
     meshRef.current.rotation.x += speed;
   }
 };
 
 export const rotateMeshY = (
-  meshRef: MutableRefObject<Mesh | Object3D>,
+  meshRef: MutableRefObject<Mesh | Group>,
   speed = SPEED_ROTATION
 ) => {
-  if (meshRef.current && isMesh(meshRef.current)) {
+  if (meshRef.current) {
     meshRef.current.rotation.y += speed;
   }
 };

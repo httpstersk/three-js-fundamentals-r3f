@@ -9,21 +9,19 @@ interface IProps {
   props: any;
 }
 
-export default function Sun({ children, emissive, ...props }: IProps) {
+export default function Sun({ emissive, ...props }: IProps) {
   const mesh = useRef<Mesh>();
   const radius = 1;
   const widthSegments = 6;
   const heightSegments = 6;
 
-  // useFrame(() => rotateMeshY(mesh));
+  useFrame(() => rotateMeshY(mesh));
 
   return (
     <mesh {...props} ref={mesh}>
       <Sphere args={[radius, widthSegments, heightSegments]}>
         <meshPhongMaterial emissive={emissive} />
       </Sphere>
-
-      {children}
     </mesh>
   );
 }

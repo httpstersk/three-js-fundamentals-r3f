@@ -16,7 +16,7 @@ export default function Sun({ color, emissive, ...props }: IProps) {
   const widthSegments = 6;
   const heightSegments = 6;
 
-  // useFrame(() => rotateMeshY(mesh));
+  useFrame(() => rotateMeshY(mesh));
 
   return (
     <mesh {...props} ref={mesh}>
