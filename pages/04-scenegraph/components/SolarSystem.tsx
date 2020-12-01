@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
+import { Color, Group } from 'three';
 import Earth from './Earth';
 import Moon from './Moon';
 import Sun from './Sun';
@@ -15,15 +16,20 @@ export default function SolarSystem({ ...props }: IProps) {
 
   return (
     <group ref={groupRef} {...props}>
-      <Earth emissive={0x112244} color={0x2233ff} position={[10, 0, 0]}>
+      <Earth
+        color={new Color(0x2233ff)}
+        emissive={new Color(0x112244)}
+        position={[10, 0, 0]}
+      >
         <Moon
-          emissive={0x222222}
-          color={0x888888}
+          color={new Color(0x888888)}
+          emissive={new Color(0x222222)}
           position={[2, 0, 0]}
           scale={[0.5, 0.5, 0.5]}
         />
       </Earth>
-      <Sun emissive={0xffff00} scale={[5, 5, 5]} />
+
+      <Sun emissive={new Color(0xffff00)} scale={[5, 5, 5]} />
     </group>
   );
 }
