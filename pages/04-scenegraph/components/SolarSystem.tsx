@@ -7,7 +7,7 @@ import Sun from './Sun';
 import { rotateMeshY } from '../../utils';
 
 interface IProps {
-  props: any;
+  props?: any;
 }
 
 export default function SolarSystem({ ...props }: IProps) {

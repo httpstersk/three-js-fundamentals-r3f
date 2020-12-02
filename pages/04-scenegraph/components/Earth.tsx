@@ -13,7 +13,13 @@ interface IProps {
   scale?: ThreeVector3;
 }
 
-export default function Earth({ children, color, emissive, position }: IProps) {
+export default function Earth({
+  children,
+  color,
+  emissive,
+  position,
+  scale,
+}: IProps) {
   const mesh = useRef<Mesh>();
   const radius = 1;
   const widthSegments = 6;
@@ -23,10 +29,10 @@ export default function Earth({ children, color, emissive, position }: IProps) {
 
   return (
     <mesh position={position} ref={mesh} scale={scale}>
+      <axesHelper args={[2]} />
       <Sphere args={[radius, widthSegments, heightSegments]}>
         <meshPhongMaterial color={color} emissive={emissive} />
       </Sphere>
-
       {children}
     </mesh>
   );
