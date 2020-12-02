@@ -23,6 +23,7 @@ export default function Moon({ color, emissive, position, scale }: IProps) {
   return (
     <mesh position={position} ref={mesh} scale={scale}>
       <axesHelper args={[2]} />
+      <gridHelper args={[2]} />
 
       <Sphere args={[radius, widthSegments, heightSegments]}>
         <meshPhongMaterial color={color} emissive={emissive} />
