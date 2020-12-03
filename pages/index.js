@@ -39,6 +39,13 @@ export default function Home() {
               <p>Scenegraph</p>
             </a>
           </Link>
+
+          <Link href="/05-textures">
+            <a className={styles.card}>
+              <h3>THREE 5 &rarr;</h3>
+              <p>Textures</p>
+            </a>
+          </Link>
         </section>
       </main>
     </div>
