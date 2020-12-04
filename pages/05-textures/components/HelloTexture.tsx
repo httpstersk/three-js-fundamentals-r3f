@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Box, useTexture } from '@react-three/drei';
-import { DoubleSide, Mesh, Texture } from 'three';
-import { getRandomColor, rotateMesh } from '../../utils';
+import { Mesh, Texture } from 'three';
+import { rotateMesh } from '../../utils';
 
-export default function BoxGeometry({ ...props }) {
+export default function HelloTexture({ ...props }) {
   const mesh = useRef<Mesh>();
   const width = 1;
   const height = 1;
@@ -16,11 +16,7 @@ export default function BoxGeometry({ ...props }) {
   return (
     <mesh {...props} ref={mesh}>
       <Box args={[width, height, depth]}>
-        <meshBasicMaterial
-          side={DoubleSide}
-          color={getRandomColor()}
-          map={texture}
-        />
+        <meshBasicMaterial map={texture} />
       </Box>
     </mesh>
   );

@@ -1,1 +1,2 @@
-export { default as Cube } from './Cube';
+export { default as HelloTexture } from './HelloTexture';
+export { default as SixTextures } from './SixTextures';

@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
-import { Cube } from './components';
+import { HelloTexture, SixTextures } from './components';
 
 export default function Scene() {
   return (
@@ -15,7 +15,7 @@ export default function Scene() {
       }}
     >
       <Suspense fallback={null}>
-        <Cube />
+        <SixTextures />
       </Suspense>
 
       <OrbitControls />
