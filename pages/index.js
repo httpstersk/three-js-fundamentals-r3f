@@ -46,6 +46,13 @@ export default function Home() {
               <p>Textures</p>
             </a>
           </Link>
+
+          <Link href="/06-lights">
+            <a className={styles.card}>
+              <h3>THREE 6 &rarr;</h3>
+              <p>Lights</p>
+            </a>
+          </Link>
         </section>
       </main>
     </div>
