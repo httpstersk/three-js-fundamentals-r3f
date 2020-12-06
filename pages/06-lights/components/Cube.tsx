@@ -1,21 +1,18 @@
 import { useRef } from 'react';
-import { useFrame } from 'react-three-fiber';
 import { Box } from '@react-three/drei';
 import { Mesh } from 'three';
-import { getRandomColor, rotateMesh } from '../../utils';
 
 export default function Cube({ ...props }) {
   const mesh = useRef<Mesh>();
-  const width = 1;
-  const height = 1;
-  const depth = 1;
-
-  useFrame(() => rotateMesh(mesh));
+  const CUBE_SIZE = 6;
+  const width = CUBE_SIZE;
+  const height = CUBE_SIZE;
+  const depth = CUBE_SIZE;
 
   return (
-    <mesh {...props} ref={mesh}>
+    <mesh {...props} ref={mesh} position={[CUBE_SIZE + 1, CUBE_SIZE / 2, 0]}>
       <Box args={[width, height, depth]}>
-        <meshPhongMaterial color={getRandomColor()} />
+        <meshPhongMaterial color="#8AC" />
       </Box>
     </mesh>
   );

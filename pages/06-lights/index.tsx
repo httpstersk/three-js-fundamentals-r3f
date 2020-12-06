@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
-import { Cube, Plane } from './components';
+import { Cube, Plane, Sphere } from './components';
 
 export default function Scene() {
   return (
@@ -17,6 +17,7 @@ export default function Scene() {
       <Suspense fallback={null}>
         <Plane />
         <Cube />
+        <Sphere />
       </Suspense>
 
       <ambientLight color={0xffffff} intensity={1} />

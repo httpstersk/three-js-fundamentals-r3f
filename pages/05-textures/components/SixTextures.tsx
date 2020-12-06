@@ -6,9 +6,10 @@ import { rotateMesh } from '../../utils';
 
 export default function SixTextures({ ...props }) {
   const mesh = useRef<Mesh>();
-  const width = 1;
-  const height = 1;
-  const depth = 1;
+  const CUBE_SIZE = 1;
+  const width = CUBE_SIZE;
+  const height = CUBE_SIZE;
+  const depth = CUBE_SIZE;
 
   const [A, B, C, D, E, F] = useTexture([
     '/static/images/flower-1.jpg',

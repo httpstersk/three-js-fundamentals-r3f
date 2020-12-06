@@ -6,9 +6,10 @@ import { rotateMesh } from '../../utils';
 
 export default function HelloTexture({ ...props }) {
   const mesh = useRef<Mesh>();
-  const width = 1;
-  const height = 1;
-  const depth = 1;
+  const CUBE_SIZE = 1;
+  const width = CUBE_SIZE;
+  const height = CUBE_SIZE;
+  const depth = CUBE_SIZE;
 
   const texture = useTexture('/static/images/wall.jpg') as Texture;
   useFrame(() => rotateMesh(mesh));
