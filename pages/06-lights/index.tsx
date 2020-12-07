@@ -1,9 +1,18 @@
 import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
+import { useTweaks } from 'use-tweaks';
 import { Cube, Plane, Sphere } from './components';
 
 export default function Scene() {
+  const { intensity } = useTweaks(
+    'Light',
+    {
+      intensity: { value: 1, min: 0, max: 2 },
+    },
+    { expanded: false }
+  );
+
   return (
     <Canvas
       camera={{
@@ -20,7 +29,7 @@ export default function Scene() {
         <Sphere />
       </Suspense>
 
-      <ambientLight color={0xffffff} intensity={1} />
+      <ambientLight color={0xffffff} intensity={intensity} />
 
       <OrbitControls target={[0, 5, 0]} />
     </Canvas>
