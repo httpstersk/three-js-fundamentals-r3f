@@ -5,13 +5,10 @@ import { useTweaks } from 'use-tweaks';
 import { Cube, Plane, Sphere } from './components';
 
 export default function Scene() {
-  const { intensity } = useTweaks(
-    'Light',
-    {
-      intensity: { value: 1, min: 0, max: 2 },
-    },
-    { expanded: false }
-  );
+  const { color, intensity } = useTweaks('Light', {
+    intensity: { value: 1, min: 0, max: 2 },
+    color: '#fff',
+  });
 
   return (
     <Canvas
@@ -29,7 +26,7 @@ export default function Scene() {
         <Sphere />
       </Suspense>
 
-      <ambientLight color={0xffffff} intensity={intensity} />
+      <ambientLight color={color} intensity={intensity} />
 
       <OrbitControls target={[0, 5, 0]} />
     </Canvas>
