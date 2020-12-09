@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Plane, useTexture } from '@react-three/drei';
 import {
   DoubleSide,
@@ -14,7 +14,7 @@ export default function PlaneGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
   const texture = useTexture('/static/images/checker.png') as Texture;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     texture.wrapT = texture.wrapS = RepeatWrapping;
     texture.magFilter = NearestFilter;
     texture.repeat.set(PLANE_SIZE / 2, PLANE_SIZE / 2);
