@@ -2,19 +2,26 @@ import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
 import { useTweaks } from 'use-tweaks';
-import { Color } from 'three';
 import { Cube, Plane, Sphere } from './components';
 
 export default function Scene() {
-  // const { color, intensity } = useTweaks('Light', {
+  // const { color, intensity } = useTweaks('Ambient Light', {
   //   intensity: { value: 1, min: 0, max: 2 },
   //   color: '#fff',
   // });
 
-  const { groundColor, skyColor, intensity } = useTweaks('Light', {
+  // const { groundColor, skyColor, intensity } = useTweaks('Hemisphere Light', {
+  //   intensity: { value: 1, min: 0, max: 2 },
+  //   groundColor: '#b97a20',
+  //   skyColor: '#b1e1ff',
+  // });
+
+  const { color, intensity, x, y, z } = useTweaks('Directional Light', {
     intensity: { value: 1, min: 0, max: 2 },
-    groundColor: '#b97a20',
-    skyColor: '#b1e1ff',
+    color: '#fff',
+    x: { value: 1, min: -10, max: 10 },
+    y: { value: 1, min: 0, max: 10 },
+    z: { value: 1, min: -10, max: 10 },
   });
 
   return (
@@ -34,11 +41,12 @@ export default function Scene() {
       </Suspense>
 
       {/* <ambientLight color={color} intensity={intensity} /> */}
-
-      <hemisphereLight
-        skyColor={skyColor}
-        groundColor={new Color(groundColor)}
+      {/* <hemisphereLight args={[skyColor, groundColor, intensity]} /> */}
+      <directionalLight
+        castShadow
+        color={color}
         intensity={intensity}
+        position={[x, y, z]}
       />
 
       <OrbitControls target={[0, 5, 0]} />
