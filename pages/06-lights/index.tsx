@@ -1,8 +1,8 @@
-import { Suspense } from 'react';
+import { Suspense, useRef } from 'react';
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
-import { useTweaks } from 'use-tweaks';
 import { Cube, Plane, Sphere } from './components';
+import DirectionalLight from './lights/DirectionalLight';
 
 export default function Scene() {
   // const { color, intensity } = useTweaks('Ambient Light', {
@@ -15,14 +15,6 @@ export default function Scene() {
   //   groundColor: '#b97a20',
   //   skyColor: '#b1e1ff',
   // });
-
-  const { color, intensity, x, y, z } = useTweaks('Directional Light', {
-    intensity: { value: 1, min: 0, max: 2 },
-    color: '#fff',
-    x: { value: 1, min: -10, max: 10 },
-    y: { value: 1, min: 0, max: 10 },
-    z: { value: 1, min: -10, max: 10 },
-  });
 
   return (
     <Canvas
@@ -42,12 +34,7 @@ export default function Scene() {
 
       {/* <ambientLight color={color} intensity={intensity} /> */}
       {/* <hemisphereLight args={[skyColor, groundColor, intensity]} /> */}
-      <directionalLight
-        castShadow
-        color={color}
-        intensity={intensity}
-        position={[x, y, z]}
-      />
+      <DirectionalLight />
 
       <OrbitControls target={[0, 5, 0]} />
     </Canvas>
