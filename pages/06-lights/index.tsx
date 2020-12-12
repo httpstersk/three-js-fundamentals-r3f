@@ -2,7 +2,12 @@ import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Cube, Plane, Sphere } from './components';
-import { AmbientLight, DirectionalLight, HemisphereLight } from './lights';
+import {
+  AmbientLight,
+  DirectionalLight,
+  HemisphereLight,
+  PointLight,
+} from './lights';
 
 export default function Scene() {
   return (
@@ -24,6 +29,7 @@ export default function Scene() {
       <AmbientLight />
       <DirectionalLight />
       <HemisphereLight />
+      <PointLight />
 
       <OrbitControls target={[0, 5, 0]} />
     </Canvas>

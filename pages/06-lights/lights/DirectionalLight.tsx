@@ -7,7 +7,7 @@ export default function DirectionalLight() {
   const { color, intensity, x, y, z, targetX, targetY, targetZ } = useTweaks(
     'Directional Light',
     {
-      intensity: { value: 1, min: 0, max: 2 },
+      intensity: { value: 0.5, min: 0, max: 2 },
       color: '#fff',
       x: { value: 1, min: -10, max: 10 },
       y: { value: 1, min: 0, max: 10 },
