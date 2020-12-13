@@ -6,6 +6,7 @@ import { CONSTANTS } from '../../constants';
 
 export default function SpotLight() {
   const {
+    angle,
     color,
     distance,
     intensity,
@@ -17,6 +18,7 @@ export default function SpotLight() {
     y,
     z,
   } = useTweaks('Spot Light', {
+    angle: { value: 0.5, min: 0, max: 1 },
     color: CONSTANTS.DEFAULT_LIGHT_COLOR,
     distance: { value: 10, min: 0, max: 40 },
     intensity: { value: CONSTANTS.DEFAULT_LIGHT_INTENSITY, min: 0, max: 2 },
@@ -47,6 +49,8 @@ export default function SpotLight() {
   return (
     <group ref={targetRef}>
       <spotLight
+        angle={angle}
+        castShadow
         color={color}
         distance={distance}
         intensity={intensity}
