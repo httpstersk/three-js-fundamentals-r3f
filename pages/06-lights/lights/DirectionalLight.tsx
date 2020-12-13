@@ -2,13 +2,14 @@ import { useEffect, useRef } from 'react';
 import { DirectionalLightHelper, Object3D } from 'three';
 import { useHelper } from '@react-three/drei';
 import { useTweaks } from 'use-tweaks';
+import { CONSTANTS } from '../../constants';
 
 export default function DirectionalLight() {
   const { color, intensity, x, y, z, targetX, targetY, targetZ } = useTweaks(
     'Directional Light',
     {
-      intensity: { value: 0.5, min: 0, max: 2 },
-      color: '#fff',
+      color: CONSTANTS.DEFAULT_LIGHT_COLOR,
+      intensity: { value: CONSTANTS.DEFAULT_LIGHT_INTENSITY, min: 0, max: 2 },
       x: { value: 1, min: -10, max: 10 },
       y: { value: 1, min: 0, max: 10 },
       z: { value: 1, min: -10, max: 10 },
