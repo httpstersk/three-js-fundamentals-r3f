@@ -1,21 +1,27 @@
 import { useEffect, useRef } from 'react';
 import { DirectionalLightHelper, Object3D } from 'three';
 import { useHelper } from '@react-three/drei';
-import { useTweaks } from 'use-tweaks';
+import { makeFolder, useTweaks } from 'use-tweaks';
 import { CONSTANTS } from '../../constants';
 
 export default function DirectionalLight() {
-  const { color, intensity, x, y, z, targetX, targetY, targetZ } = useTweaks(
+  const { color, intensity, targetX, targetY, targetZ, x, y, z } = useTweaks(
     'Directional Light',
     {
       color: CONSTANTS.DEFAULT_LIGHT_COLOR,
       intensity: { value: CONSTANTS.DEFAULT_LIGHT_INTENSITY, min: 0, max: 2 },
-      x: { value: 1, min: -10, max: 10 },
-      y: { value: 1, min: 0, max: 10 },
-      z: { value: 1, min: -10, max: 10 },
-      targetX: { value: 1, min: -10, max: 10 },
-      targetY: { value: 1, min: 0, max: 10 },
-      targetZ: { value: 1, min: -10, max: 10 },
+      ...makeFolder(
+        'Positions',
+        {
+          targetX: { value: 1, min: -10, max: 10 },
+          targetY: { value: 1, min: 0, max: 10 },
+          targetZ: { value: 1, min: -10, max: 10 },
+          x: { value: 1, min: -10, max: 10 },
+          y: { value: 1, min: 0, max: 10 },
+          z: { value: 1, min: -10, max: 10 },
+        },
+        false
+      ),
     }
   );
 

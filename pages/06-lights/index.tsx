@@ -7,6 +7,7 @@ import {
   DirectionalLight,
   HemisphereLight,
   PointLight,
+  SpotLight,
 } from './lights';
 
 export default function Scene() {
@@ -30,6 +31,7 @@ export default function Scene() {
       <DirectionalLight />
       <HemisphereLight />
       <PointLight />
+      <SpotLight />
 
       <OrbitControls target={[0, 5, 0]} />
     </Canvas>
