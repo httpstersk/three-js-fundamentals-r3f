@@ -7,6 +7,7 @@ import {
   DirectionalLight,
   HemisphereLight,
   PointLight,
+  RectAreaLight,
   SpotLight,
 } from './lights';
 
@@ -31,6 +32,7 @@ export default function Scene() {
       <DirectionalLight />
       <HemisphereLight />
       <PointLight />
+      <RectAreaLight />
       <SpotLight />
 
       <OrbitControls target={[0, 5, 0]} />

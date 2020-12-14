@@ -12,7 +12,7 @@ export default function Cube({ ...props }) {
   return (
     <mesh {...props} ref={mesh} position={[CUBE_SIZE + 1, CUBE_SIZE / 2, 0]}>
       <Box args={[width, height, depth]}>
-        <meshPhongMaterial color="#8AC" />
+        <meshStandardMaterial color="#8AC" />
       </Box>
     </mesh>
   );

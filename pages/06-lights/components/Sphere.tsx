@@ -20,7 +20,7 @@ export default function SphereGeometry({ ...props }) {
       <Sphere
         args={[SPHERE_RADIUS, SPHERE_WIDTH_DIVISIONS, SPHERE_HEIGHT_DIVISIONS]}
       >
-        <meshPhongMaterial color="#CA8" />
+        <meshStandardMaterial color="#CA8" />
       </Sphere>
     </mesh>
   );
