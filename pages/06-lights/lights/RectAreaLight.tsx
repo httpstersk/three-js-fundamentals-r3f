@@ -1,6 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { makeFolder, useTweaks } from 'use-tweaks';
-import { Object3D } from 'three';
 import { CONSTANTS } from '../../constants';
 
 export default function RectAreaLight() {
@@ -9,9 +8,9 @@ export default function RectAreaLight() {
     height,
     width,
     intensity,
-    targetX,
-    targetY,
-    targetZ,
+    rotationX,
+    rotationY,
+    rotationZ,
     x,
     y,
     z,
@@ -23,9 +22,9 @@ export default function RectAreaLight() {
     ...makeFolder(
       'Positions',
       {
-        targetX: { value: 1, min: -10, max: 10 },
-        targetY: { value: 1, min: 0, max: 10 },
-        targetZ: { value: 1, min: -10, max: 10 },
+        rotationX: { value: 1, min: 0, max: 1 },
+        rotationY: { value: 1, min: 0, max: 1 },
+        rotationZ: { value: 1, min: 0, max: 1 },
         x: { value: 1, min: -10, max: 10 },
         y: { value: 1, min: 0, max: 10 },
         z: { value: 1, min: -10, max: 10 },
@@ -35,23 +34,17 @@ export default function RectAreaLight() {
   });
 
   const lightRef = useRef();
-  const targetRef = useRef<Object3D>();
-
-  useEffect(() => {
-    targetRef?.current?.position.set(targetX, targetY, targetZ);
-  }, [targetX, targetY, targetZ]);
 
   return (
-    <group ref={targetRef}>
-      <rectAreaLight
-        castShadow
-        color={color}
-        height={height}
-        intensity={intensity}
-        position={[x, y, z]}
-        ref={lightRef}
-        width={width}
-      />
-    </group>
+    <rectAreaLight
+      castShadow
+      color={color}
+      height={height}
+      intensity={intensity}
+      position={[x, y, z]}
+      rotation={[rotationX, rotationY, rotationZ]}
+      ref={lightRef}
+      width={width}
+    />
   );
 }
