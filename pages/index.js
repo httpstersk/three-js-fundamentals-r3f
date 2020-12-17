@@ -53,6 +53,13 @@ export default function Home() {
               <p>Lights</p>
             </a>
           </Link>
+
+          <Link href="/07-cameras">
+            <a className={styles.card}>
+              <h3>THREE 7 &rarr;</h3>
+              <p>Cameras</p>
+            </a>
+          </Link>
         </section>
       </main>
     </div>
