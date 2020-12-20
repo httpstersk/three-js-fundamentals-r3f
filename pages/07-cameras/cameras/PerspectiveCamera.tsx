@@ -3,7 +3,7 @@ import { useTweaks } from 'use-tweaks';
 import { PerspectiveCamera } from '@react-three/drei';
 import { PerspectiveCamera as PerspectiveCameraType } from 'three';
 
-export default function Perspective() {
+export default function Perspective({ ...props }) {
   const camera = useRef<PerspectiveCameraType>();
   const { far, fov, near } = useTweaks('Perspective Camera', {
     fov: { value: 45, min: 1, max: 180 },
@@ -20,6 +20,7 @@ export default function Perspective() {
       far={far}
       position={[0, 10, 20]}
       ref={camera}
+      {...props}
     />
   );
 }
