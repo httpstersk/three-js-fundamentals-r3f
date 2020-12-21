@@ -14,10 +14,10 @@ export default function Perspective({ ...props }) {
   return (
     <PerspectiveCamera
       aspect={2}
+      far={far}
       fov={fov}
       makeDefault
       near={near}
-      far={far}
       position={[0, 10, 20]}
       ref={camera}
       {...props}

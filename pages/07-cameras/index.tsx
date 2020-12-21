@@ -3,6 +3,7 @@ import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
 import PerspectiveCamera from './cameras/PerspectiveCamera';
 import OrthographicCamera from './cameras/OrthographicCamera';
+import Viewport from './cameras/Viewport';
 import { Cube, Plane, Sphere } from './components';
 import { DirectionalLight } from './lights';
 
@@ -16,7 +17,8 @@ export default function Scene() {
       </Suspense>
 
       {/* <PerspectiveCamera /> */}
-      <OrthographicCamera />
+      {/* <OrthographicCamera /> */}
+      <Viewport></Viewport>
 
       <DirectionalLight />
 
