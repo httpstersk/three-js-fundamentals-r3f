@@ -1,9 +1,14 @@
-import { useRef } from 'react';
+import { ReactNode, useRef } from 'react';
 import { useTweaks } from 'use-tweaks';
 import { OrthographicCamera } from '@react-three/drei';
 import { OrthographicCamera as OrthographicCameraType } from 'three';
 
-export default function Orthographic({ ...props }) {
+interface IProps {
+  children?: ReactNode;
+  props?: any;
+}
+
+export default function Orthographic({ children, ...props }: IProps) {
   const SIZE = 1;
   const camera = useRef<OrthographicCameraType>();
   const { far, near, zoom } = useTweaks('Orthographic Camera', {
@@ -24,7 +29,7 @@ export default function Orthographic({ ...props }) {
       position={[0, 10, 20]}
       ref={camera}
       zoom={zoom}
-      children={() => {}}
+      children={children}
       {...props}
     />
   );
