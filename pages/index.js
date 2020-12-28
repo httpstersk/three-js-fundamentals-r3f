@@ -60,6 +60,13 @@ export default function Home() {
               <p>Cameras</p>
             </a>
           </Link>
+
+          <Link href="/08-shadows">
+            <a className={styles.card}>
+              <h3>THREE 8 &rarr;</h3>
+              <p>Shadows</p>
+            </a>
+          </Link>
         </section>
       </main>
     </div>
