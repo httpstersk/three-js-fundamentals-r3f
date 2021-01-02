@@ -10,14 +10,16 @@ export default function SphereGeometry({ ...props }) {
 
   return (
     <mesh
-      {...props}
       ref={mesh}
       position={[-SPHERE_RADIUS - 1, SPHERE_RADIUS + 2, 0]}
+      {...props}
     >
       <Sphere
         args={[SPHERE_RADIUS, SPHERE_WIDTH_DIVISIONS, SPHERE_HEIGHT_DIVISIONS]}
+        castShadow
+        receiveShadow
       >
-        <meshStandardMaterial color="#CA8" />
+        <meshPhongMaterial color="#CA8" />
       </Sphere>
     </mesh>
   );

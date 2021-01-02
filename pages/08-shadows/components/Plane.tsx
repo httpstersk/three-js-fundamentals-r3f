@@ -21,9 +21,9 @@ export default function PlaneGeometry({ ...props }) {
   }, [texture]);
 
   return (
-    <mesh {...props} ref={mesh} rotation-x={Math.PI * -0.5} receiveShadow>
-      <Plane args={[PLANE_SIZE, PLANE_SIZE]}>
-        <meshBasicMaterial side={DoubleSide} map={texture} />
+    <mesh ref={mesh} rotation-x={Math.PI * -0.5} {...props}>
+      <Plane receiveShadow args={[PLANE_SIZE, PLANE_SIZE]}>
+        <meshPhongMaterial flatShading side={DoubleSide} map={texture} />
       </Plane>
     </mesh>
   );
