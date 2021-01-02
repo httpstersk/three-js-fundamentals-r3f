@@ -1,12 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 import { useHelper } from '@react-three/drei';
 import { useThree } from 'react-three-fiber';
-import { DirectionalLightHelper, CameraHelper, Object3D } from 'three';
+import {
+  DirectionalLight,
+  DirectionalLightHelper,
+  CameraHelper,
+  Object3D,
+  OrthographicCamera,
+} from 'three';
 import { makeButton, makeFolder, useTweaks } from 'use-tweaks';
 import { CONSTANTS } from '../../constants';
 
-export default function DirectionalLight() {
-  const [isHelperOn, toggleHelper] = useState(true);
+export default function DirectionalLightWithHelper() {
+  const [isHelperLightOn, toggleLightHelper] = useState(true);
+  const [isHelperShadowOn, toggleShadowHelper] = useState(true);
   const { scene } = useThree();
 
   const { color, intensity, targetX, targetY, targetZ, x, y, z } = useTweaks(
@@ -26,15 +33,18 @@ export default function DirectionalLight() {
         },
         true
       ),
-      ...makeButton(`${isHelperOn ? 'Hide' : 'Show'} Helper`, () =>
-        toggleHelper((helper) => !helper)
+      ...makeButton(`Toggle Light Helper`, () =>
+        toggleLightHelper((state) => !state)
+      ),
+      ...makeButton(`Toggle Shadow Helper`, () =>
+        toggleShadowHelper((state) => !state)
       ),
     }
   );
 
-  const lightRef = useRef();
+  const lightRef = useRef<DirectionalLight>();
   const targetRef = useRef<Object3D>();
-  const lightHelper = isHelperOn ? DirectionalLightHelper : null;
+  const lightHelper = isHelperLightOn ? DirectionalLightHelper : null;
 
   useEffect(() => {
     targetRef?.current?.position.set(targetX, targetY, targetZ);
@@ -43,11 +53,12 @@ export default function DirectionalLight() {
   useHelper(lightRef, lightHelper);
 
   useEffect(() => {
-    if (lightRef.current) {
-      const cameraHelper = new CameraHelper(lightRef.current.shadow.camera);
-      scene.add(cameraHelper);
-    }
-  }, []);
+    const camera: OrthographicCamera = lightRef.current.shadow.camera;
+    const cameraHelper = new CameraHelper(camera);
+    isHelperShadowOn && scene.add(cameraHelper);
+
+    return () => scene.remove(cameraHelper);
+  }, [isHelperShadowOn, lightRef.current]);
 
   return (
     <group ref={targetRef}>
