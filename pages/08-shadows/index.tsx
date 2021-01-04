@@ -1,12 +1,13 @@
-import { Example1, Example2 } from './examples';
+import { Example1, Example2, Example3 } from './examples';
 
 export const NUM_SPHERES = 15;
 
 export default function Scene() {
   return (
     <>
-      <Example1 />
+      {/* <Example1 /> */}
       {/* <Example2 /> */}
+      <Example3 />
     </>
   );
 }
