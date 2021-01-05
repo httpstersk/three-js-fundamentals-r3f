@@ -67,6 +67,13 @@ export default function Home() {
               <p>Shadows</p>
             </a>
           </Link>
+
+          <Link href="/09-fog">
+            <a className={styles.card}>
+              <h3>THREE 9 &rarr;</h3>
+              <p>Fog</p>
+            </a>
+          </Link>
         </section>
       </main>
     </div>

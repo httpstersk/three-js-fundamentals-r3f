@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Polyhedron } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
-import { EXAMPLES_RADIUS } from '../../constants';
+import { CONSTANTS } from '../../constants';
 import { getRandomColor, rotateMesh } from '../../utils';
 
 export default function PolyhedronGeometry({ ...props }) {
@@ -22,7 +22,7 @@ export default function PolyhedronGeometry({ ...props }) {
     4, 5, 6,    6, 7, 4,
   ];
 
-  const radius = EXAMPLES_RADIUS;
+  const radius = CONSTANTS.EXAMPLES_RADIUS;
 
   // Defaults ↓
   const detail = 2;

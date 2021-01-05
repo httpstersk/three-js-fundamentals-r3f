@@ -1,9 +1,9 @@
 import { Box } from '@react-three/flex';
-import { EXAMPLES_PADDING } from '../../constants';
+import { CONSTANTS } from '../../constants';
 
 export default function Example({ children, ...props }) {
   return (
-    <Box centerAnchor padding={EXAMPLES_PADDING} {...props}>
+    <Box centerAnchor padding={CONSTANTS.EXAMPLES_PADDING} {...props}>
       {children}
     </Box>
   );

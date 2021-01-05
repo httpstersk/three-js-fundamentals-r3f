@@ -2,12 +2,12 @@ import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Circle } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
-import { EXAMPLES_RADIUS } from '../../constants';
+import { CONSTANTS } from '../../constants';
 import { getRandomColor, rotateMesh } from '../../utils';
 
 export default function CircleGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
-  const radius = EXAMPLES_RADIUS;
+  const radius = CONSTANTS.EXAMPLES_RADIUS;
   const segments = 24;
 
   // Defaults ↓

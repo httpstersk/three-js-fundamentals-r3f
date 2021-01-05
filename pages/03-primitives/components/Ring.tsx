@@ -2,13 +2,13 @@ import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Ring } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
-import { EXAMPLES_RADIUS } from '../../constants';
+import { CONSTANTS } from '../../constants';
 import { getRandomColor, rotateMesh } from '../../utils';
 
 export default function RingGeometry({ ...props }) {
   const mesh = useRef<Mesh>();
   const innerRadius = 2;
-  const outerRadius = EXAMPLES_RADIUS;
+  const outerRadius = CONSTANTS.EXAMPLES_RADIUS;
   const thetaSegments = 18;
 
   // Defaults ↓
