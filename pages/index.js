@@ -74,6 +74,13 @@ export default function Home() {
               <p>Fog</p>
             </a>
           </Link>
+
+          <Link href="/10-render-targets">
+            <a className={styles.card}>
+              <h3>THREE 10 &rarr;</h3>
+              <p>Render Targets</p>
+            </a>
+          </Link>
         </section>
       </main>
     </div>
