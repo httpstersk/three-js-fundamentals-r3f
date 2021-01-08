@@ -4,7 +4,7 @@ import { PerspectiveCamera } from '@react-three/drei';
 const Perspective = forwardRef(({ ...props }, ref) => {
   return (
     <PerspectiveCamera
-      aspect={2}
+      aspect={1}
       far={5}
       fov={75}
       makeDefault

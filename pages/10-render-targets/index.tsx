@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Cube, RenderTargetCube } from './components/';
+import PerspectiveCamera from './cameras/PerspectiveCamera';
 import { Color } from 'three';
 
 const CUBES = [
@@ -45,6 +46,8 @@ const InnerScene = ({ cubes }: Props) => (
 export default function Scene() {
   return (
     <Canvas>
+      <PerspectiveCamera />
+
       <RenderTargetCube>
         <InnerScene cubes={CUBES} />
       </RenderTargetCube>

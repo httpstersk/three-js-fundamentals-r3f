@@ -4,7 +4,7 @@ import { Box } from '@react-three/drei';
 import { Color, Mesh, Scene, WebGLRenderTarget } from 'three';
 import { PerspectiveCamera as PerspectiveCameraType } from 'three';
 import PerspectiveCamera from '../cameras/PerspectiveCamera';
-import { rotateMesh } from '../../utils';
+import { CONSTANTS } from '../../constants';
 
 const RenderTargetCube = ({ children }) => {
   const camera = useRef<PerspectiveCameraType>();
@@ -12,7 +12,7 @@ const RenderTargetCube = ({ children }) => {
 
   const [scene, target] = useMemo(() => {
     const scene = new Scene();
-    scene.background = new Color('#FFFFFF');
+    scene.background = new Color('red');
     const target = new WebGLRenderTarget(512, 512);
     return [scene, target];
   }, []);
@@ -21,7 +21,8 @@ const RenderTargetCube = ({ children }) => {
     gl.setRenderTarget(target);
     gl.render(scene, camera.current);
     gl.setRenderTarget(null);
-    rotateMesh(mesh);
+    mesh.current.rotation.x += CONSTANTS.SPEED_ROTATION;
+    mesh.current.rotation.y += CONSTANTS.SPEED_ROTATION * 1.1;
   });
 
   return (
@@ -38,7 +39,7 @@ const RenderTargetCube = ({ children }) => {
 
       <mesh ref={mesh}>
         <Box args={[1, 1, 1]}>
-          <meshPhongMaterial color="red" map={target.texture} />
+          <meshPhongMaterial map={target.texture} />
         </Box>
       </mesh>
     </>
