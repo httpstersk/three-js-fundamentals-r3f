@@ -81,6 +81,13 @@ export default function Home() {
               <p>Render Targets</p>
             </a>
           </Link>
+
+          <Link href="/11-custom-geometry">
+            <a className={styles.card}>
+              <h3>THREE 11 &rarr;</h3>
+              <p>Custom Geometry</p>
+            </a>
+          </Link>
         </section>
       </main>
     </div>
