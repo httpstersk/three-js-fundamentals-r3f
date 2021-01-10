@@ -1,6 +1,6 @@
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
-import CustomCube from './CustomCube';
+import { CubesVertexNormal } from './components/';
 
 const CUBES = [
   {
@@ -23,9 +23,7 @@ const CUBES = [
 export default function Scene() {
   return (
     <Canvas camera={{ far: 100, fov: 75, near: 0.1, position: [0, 0, 5] }}>
-      {CUBES.map(({ _id, color, x }) => {
-        return <CustomCube color={color} ndx={_id} key={_id} position-x={x} />;
-      })}
+      <CubesVertexNormal cubes={CUBES} />
 
       <directionalLight
         color={0xffffff}

@@ -2,8 +2,8 @@ import { useMemo, useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Color, Face3, Geometry, Mesh, Vector3 } from 'three';
 
-const CustomCube = ({ ...props }) => {
-  const { color, ndx } = props;
+const CubeWithVertexColors = ({ ...props }) => {
+  const { ndx } = props;
   const mesh = useRef<Mesh>();
 
   useFrame(() => {
@@ -81,4 +81,4 @@ const CustomCube = ({ ...props }) => {
   );
 };
 
-export default CustomCube;
+export default CubeWithVertexColors;
