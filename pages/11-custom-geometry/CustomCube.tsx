@@ -1,6 +1,6 @@
 import { useMemo, useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { Face3, Geometry, Mesh, Vector3 } from 'three';
+import { Color, Face3, Geometry, Mesh, Vector3 } from 'three';
 
 const CustomCube = ({ ...props }) => {
   const { color, ndx } = props;
@@ -60,12 +60,23 @@ const CustomCube = ({ ...props }) => {
       new Face3(4, 5, 1)
     );
 
+    geo.faces.map(
+      (face, ndx) =>
+        (face.vertexColors = [
+          new Color().setHSL(ndx / 12, 1, 0.5),
+          new Color().setHSL(ndx / 12 + 0.1, 1, 0.5),
+          new Color().setHSL(ndx / 12 + 0.2, 1, 0.5),
+        ])
+    );
+
+    geo.computeFaceNormals();
+
     return geo;
   }, []);
 
   return (
     <mesh geometry={geometry} ref={mesh} {...props}>
-      <meshBasicMaterial color={color} />
+      <meshBasicMaterial vertexColors />
     </mesh>
   );
 };
