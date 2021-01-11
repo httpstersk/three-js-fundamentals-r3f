@@ -1,6 +1,7 @@
+import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
-import { CubesVertexNormal } from './components/';
+import { CubesFaceVertexUv, CubesVertexNormal } from './components/';
 
 const CUBES = [
   {
@@ -22,8 +23,14 @@ const CUBES = [
 
 export default function Scene() {
   return (
-    <Canvas camera={{ far: 100, fov: 75, near: 0.1, position: [0, 0, 5] }}>
-      <CubesVertexNormal cubes={CUBES} />
+    <Canvas
+      camera={{ aspect: 2, far: 100, fov: 75, near: 0.1, position: [0, 0, 5] }}
+    >
+      {/* <CubesVertexNormal cubes={CUBES} /> */}
+
+      <Suspense fallback={null}>
+        <CubesFaceVertexUv cubes={CUBES} />
+      </Suspense>
 
       <directionalLight
         color={0xffffff}
