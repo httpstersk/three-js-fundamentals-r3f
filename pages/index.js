@@ -14,78 +14,78 @@ export default function Home() {
         <section className={styles.grid}>
           <Link href="/01-fundamentals">
             <a className={styles.card}>
-              <h3>THREE 1 &rarr;</h3>
-              <p>Fundamentals</p>
+              <h3>Fundamentals</h3>
+              <p>Enter →</p>
             </a>
           </Link>
 
           <Link href="/02-responsive">
             <a className={styles.card}>
-              <h3>THREE 2 &rarr;</h3>
-              <p>Responsive</p>
+              <h3>Responsive</h3>
+              <p>Enter →</p>
             </a>
           </Link>
 
           <Link href="/03-primitives">
             <a className={styles.card}>
-              <h3>THREE 3 &rarr;</h3>
-              <p>Primitives</p>
+              <h3>Primitives</h3>
+              <p>Enter →</p>
             </a>
           </Link>
 
           <Link href="/04-scenegraph">
             <a className={styles.card}>
-              <h3>THREE 4 &rarr;</h3>
-              <p>Scenegraph</p>
+              <h3>Scenegraph</h3>
+              <p>Enter →</p>
             </a>
           </Link>
 
           <Link href="/05-textures">
             <a className={styles.card}>
-              <h3>THREE 5 &rarr;</h3>
-              <p>Textures</p>
+              <h3>Textures</h3>
+              <p>Enter →</p>
             </a>
           </Link>
 
           <Link href="/06-lights">
             <a className={styles.card}>
-              <h3>THREE 6 &rarr;</h3>
-              <p>Lights</p>
+              <h3>Lights</h3>
+              <p>Enter →</p>
             </a>
           </Link>
 
           <Link href="/07-cameras">
             <a className={styles.card}>
-              <h3>THREE 7 &rarr;</h3>
-              <p>Cameras</p>
+              <h3>Cameras</h3>
+              <p>Enter →</p>
             </a>
           </Link>
 
           <Link href="/08-shadows">
             <a className={styles.card}>
-              <h3>THREE 8 &rarr;</h3>
-              <p>Shadows</p>
+              <h3>Shadows</h3>
+              <p>Enter →</p>
             </a>
           </Link>
 
           <Link href="/09-fog">
             <a className={styles.card}>
-              <h3>THREE 9 &rarr;</h3>
-              <p>Fog</p>
+              <h3>Fog</h3>
+              <p>Enter →</p>
             </a>
           </Link>
 
           <Link href="/10-render-targets">
             <a className={styles.card}>
-              <h3>THREE 10 &rarr;</h3>
-              <p>Render Targets</p>
+              <h3>Render Targets</h3>
+              <p>Enter →</p>
             </a>
           </Link>
 
           <Link href="/11-custom-geometry">
             <a className={styles.card}>
-              <h3>THREE 11 &rarr;</h3>
-              <p>Custom Geometry</p>
+              <h3>Custom Geometry</h3>
+              <p>Enter →</p>
             </a>
           </Link>
         </section>
