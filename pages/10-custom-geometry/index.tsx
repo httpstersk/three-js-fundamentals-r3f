@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
-import { CubesFaceVertexUv, CubesVertexNormal } from './components/';
+import { CubesFaceVertexUv, CubesVertexNormal } from './components';
 
 const CUBES = [
   {

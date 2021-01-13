@@ -1,4 +1,4 @@
-import { CubeWithVertexNormals } from './';
+import { CubeWithVertexNormals } from '.';
 
 const CubesVertexNormal = ({ cubes }) => (
   <>

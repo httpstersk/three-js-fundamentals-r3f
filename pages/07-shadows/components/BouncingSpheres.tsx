@@ -1,4 +1,4 @@
-import { SphereWithShadow } from '../components';
+import { SphereWithShadow } from '.';
 import { getRandomColor } from '../../utils';
 
 export default function BouncingSpheres({ num }) {

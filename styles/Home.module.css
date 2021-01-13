@@ -7,32 +7,57 @@
 }
 
 .main {
-  align-items: center;
+  color: #eaeaea;
   display: flex;
   flex: 1;
-  flex-direction: column;
+  font-family: Inter;
   justify-content: center;
+  gap: 1rem;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.header {
+  padding: 1rem 2rem;
+}
+
+.heading {
+  flex: 1.5;
+  font-family: Karelia;
+  font-size: 7rem;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0;
+  margin-left: -0.5rem;
+}
+
+.subheading {
+  font-size: 1.25rem;
+  font-weight: 400;
 }
 
 .grid {
   align-items: center;
   counter-reset: num;
   display: flex;
+  flex: 1;
   justify-content: center;
   flex-wrap: wrap;
+  max-width: 50vw;
 }
 
 .card {
-  border-color: inherit;
   color: #eaeaea;
   counter-increment: num;
   flex-basis: 100%;
-  margin: 0 2rem;
+  margin-bottom: 0 2rem;
   padding: 1rem 5rem;
   position: relative;
   text-align: left;
   text-decoration: none;
   transition: color 0.15s ease, border-color 0.15s ease;
+  user-select: none;
 }
 
 .card:hover,
@@ -55,17 +80,18 @@
 }
 
 .card h3 {
-  font-family: 'Karelia';
-  font-size: 5rem;
-  font-weight: normal;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1;
   margin: 0;
+  margin-left: -0.25rem;
   letter-spacing: -1px;
 }
 
 .card p {
-  margin: 0;
   font-size: 1.25rem;
-  line-height: 1.5;
+  margin: 0;
+  margin-top: 0.75rem;
 }
 
 @media (max-width: 600px) {

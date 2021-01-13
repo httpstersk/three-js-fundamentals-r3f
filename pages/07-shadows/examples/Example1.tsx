@@ -4,7 +4,7 @@ import { OrbitControls } from '@react-three/drei';
 import PerspectiveCamera from '../cameras/PerspectiveCamera';
 import { BouncingSpheres, Plane } from '../components';
 import { DirectionalLight, HemisphereLight } from '../lights';
-import { NUM_SPHERES } from '../';
+import { NUM_SPHERES } from '..';
 
 export default function Example1() {
   return (

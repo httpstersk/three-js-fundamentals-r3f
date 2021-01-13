@@ -1,6 +1,6 @@
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
-import { Cube, Fog } from './components/';
+import { Cube, Fog } from './components';
 import PerspectiveCamera from './cameras/PerspectiveCamera';
 
 const CUBES = [

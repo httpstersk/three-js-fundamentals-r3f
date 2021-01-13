@@ -1,4 +1,4 @@
-import { CubeWithVertexColors } from './';
+import { CubeWithVertexColors } from '.';
 
 const CubesVertexColor = ({ cubes }) => (
   <>

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Plane, Sphere, useTexture } from '@react-three/drei';
-import { NUM_SPHERES } from '../';
+import { NUM_SPHERES } from '..';
 import { Group, MathUtils, Material, Mesh, Texture } from 'three';
 
 export default function SphereWithShadow({ color, ndx, ...props }) {

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
-import { Cube, RenderTargetCube } from './components/';
+import { Cube, RenderTargetCube } from './components';
 import PerspectiveCamera from './cameras/PerspectiveCamera';
 import { Color } from 'three';
 
