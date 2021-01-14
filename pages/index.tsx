@@ -1,37 +1,22 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { Canvas } from 'react-three-fiber';
-import { Box, OrbitControls } from '@react-three/drei';
+import HomepageScene from './00-homepage/';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>
-          React Three Fiber Fundamentals (Based on Three.js Fundamentals)
-        </title>
+        <title>Three.js Fundamentals (React Three Fiber Version)</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Canvas camera={{ position: [0, 0, 2] }}>
-        <directionalLight
-          color={0xffffff}
-          intensity={1.0}
-          position={[-1, 2, 4]}
-        />
-
-        <Box args={[1, 1, 1]}>
-          <meshPhongMaterial color={0x8844aa} />
-        </Box>
-
-        <OrbitControls />
-      </Canvas>
+      <HomepageScene />
 
       <main className={styles.main}>
         <header className={styles.header}>
-          <h1 className={styles.heading}>React–Three–Fiber Fundamentals</h1>
-          <h2 className={styles.subheading}>Based on Three.js Fundamentals</h2>
+          <h1 className={styles.heading}>Three.js Fundamentals</h1>
+          <h2 className={styles.subheading}>React–Three–Fiber Version</h2>
         </header>
 
         <section className={styles.grid}>
