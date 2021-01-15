@@ -1,15 +1,23 @@
+:root {
+  --base-space: 2rem;
+}
+
 html,
 body,
 canvas {
-  background: black;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: black;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   height: 100vh;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
+  user-select: none;
   width: 100vw;
 }
 
 * {
+  --fluid-size: var(--min-font-size) * 1px +
+    (var(--max-font-size) - var(--min-font-size)) *
+    ((100vw - 420px) / (1440 - 420));
   box-sizing: border-box;
 }

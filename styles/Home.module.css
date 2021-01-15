@@ -1,7 +1,7 @@
 .container {
   align-items: center;
-  min-height: 100vh;
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   justify-content: center;
 }
@@ -11,47 +11,63 @@
   display: flex;
   flex: 1;
   font-family: Inter;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 1rem;
+  pointer-events: none;
   position: absolute;
   top: 0;
+  width: 100vw;
   z-index: 1;
 }
 
-.header {
-  padding: 1rem 2rem;
-}
-
 .heading {
-  flex: 1.5;
+  --min-font-size: 60;
+  --max-font-size: 120;
   font-family: Karelia;
-  font-size: 7rem;
+  font-size: clamp(
+    var(--min-font-size) * 1px,
+    var(--fluid-size),
+    var(--max-font-size) * 1px
+  );
   font-weight: 500;
   line-height: 1.1;
   margin: 0;
-  margin-left: -0.5rem;
+  max-width: 12ch;
+  left: var(--base-space);
+  position: fixed;
+  top: var(--base-space);
 }
 
 .subheading {
-  font-size: 1.25rem;
+  --min-font-size: 16;
+  --max-font-size: 20;
+  bottom: var(--base-space);
+  font-size: clamp(
+    var(--min-font-size) * 1px,
+    var(--fluid-size),
+    var(--max-font-size) * 1px
+  );
   font-weight: 400;
+  left: var(--base-space);
+  position: fixed;
 }
 
 .grid {
-  align-items: center;
   counter-reset: num;
   display: flex;
+  flex-direction: column;
   flex: 1;
-  justify-content: center;
   flex-wrap: wrap;
-  max-width: 50vw;
+  max-width: 33vw;
+  pointer-events: initial;
+  overflow-y: scroll;
 }
 
 .card {
   color: #eaeaea;
   counter-increment: num;
   flex-basis: 100%;
-  margin-bottom: 0 2rem;
+  margin-bottom: 0 var(--base-space);
   padding: 1rem 5rem;
   position: relative;
   text-align: left;
@@ -80,18 +96,32 @@
 }
 
 .card h3 {
-  font-size: 3rem;
+  --min-font-size: 30;
+  --max-font-size: 60;
+  font-size: clamp(
+    var(--min-font-size) * 1px,
+    var(--fluid-size),
+    var(--max-font-size) * 1px
+  );
   font-weight: 400;
   line-height: 1;
   margin: 0;
   margin-left: -0.25rem;
+  max-width: 7ch;
   letter-spacing: -1px;
 }
 
 .card p {
-  font-size: 1.25rem;
+  --min-font-size: 16;
+  --max-font-size: 20;
+  bottom: var(--base-space);
+  font-size: clamp(
+    var(--min-font-size) * 1px,
+    var(--fluid-size),
+    var(--max-font-size) * 1px
+  );
   margin: 0;
-  margin-top: 0.75rem;
+  margin-top: calc(var(--base-space) / 2);
 }
 
 @media (max-width: 600px) {
