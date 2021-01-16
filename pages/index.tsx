@@ -15,7 +15,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.heading}>Three.js Fundamentals</h1>
-        <h2 className={styles.subheading}>React–Three–Fiber Version</h2>
+        <h2 className={styles.subheading}>React Three Fiber Version</h2>
 
         <section className={styles.grid}>
           <Link href="/01-fundamentals">

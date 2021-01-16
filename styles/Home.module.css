@@ -7,7 +7,7 @@
 }
 
 .main {
-  color: #eaeaea;
+  color: var(--text-color);
   display: flex;
   flex: 1;
   font-family: Inter;
@@ -21,7 +21,7 @@
 }
 
 .heading {
-  --min-font-size: 60;
+  --min-font-size: 30;
   --max-font-size: 120;
   font-family: Karelia;
   font-size: clamp(
@@ -30,6 +30,7 @@
     var(--max-font-size) * 1px
   );
   font-weight: 500;
+  letter-spacing: -0.05rem;
   line-height: 1.1;
   margin: 0;
   max-width: 12ch;
@@ -58,13 +59,15 @@
   flex-direction: column;
   flex: 1;
   flex-wrap: wrap;
-  max-width: 33vw;
+  margin: var(--base-space);
+  max-width: clamp(20rem, 40vw, 30rem);
   pointer-events: initial;
-  overflow-y: scroll;
 }
 
 .card {
-  color: #eaeaea;
+  --min-font-size: 16;
+  --max-font-size: 20;
+  color: var(--text-color);
   counter-increment: num;
   flex-basis: 100%;
   margin-bottom: 0 var(--base-space);
@@ -72,31 +75,40 @@
   position: relative;
   text-align: left;
   text-decoration: none;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease;
   user-select: none;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #fff;
+  color: hotpink;
 }
 
 .card::before {
+  --size: 2rem;
+  align-items: center;
   content: counter(num);
+  display: flex;
   font-feature-settings: 'tnum';
-  font-size: 1.25rem;
+  font-size: clamp(
+    var(--min-font-size) * 1px,
+    var(--fluid-size),
+    var(--max-font-size) * 1px
+  );
   font-variant-numeric: tabular-nums;
+  justify-content: center;
+  height: var(--size);
   left: 0;
+  position: absolute;
+  text-align: center;
   top: 50%;
   transform: translateY(-50%);
-  text-align: center;
-  position: absolute;
-  width: 3rem;
+  width: var(--size);
 }
 
 .card h3 {
-  --min-font-size: 30;
+  --min-font-size: 20;
   --max-font-size: 60;
   font-size: clamp(
     var(--min-font-size) * 1px,
@@ -108,7 +120,6 @@
   margin: 0;
   margin-left: -0.25rem;
   max-width: 7ch;
-  letter-spacing: -1px;
 }
 
 .card p {
@@ -122,11 +133,4 @@
   );
   margin: 0;
   margin-top: calc(var(--base-space) / 2);
-}
-
-@media (max-width: 600px) {
-  .grid {
-    flex-direction: column;
-    width: 100%;
-  }
 }
