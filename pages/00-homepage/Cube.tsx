@@ -5,6 +5,8 @@ import { Mesh } from 'three';
 import { getRandomColor } from '../utils';
 
 const Cube = ({ ...props }) => {
+  const { innerHeight, innerWidth } = window;
+  const size = innerWidth / innerHeight / 2;
   const mesh = useRef<Mesh>();
   const [color, setColor] = useState('hotpink');
 
@@ -14,13 +16,8 @@ const Cube = ({ ...props }) => {
     }
   });
 
-  const onPointerOver = () => {
-    setColor(getRandomColor());
-  };
-
-  const onPointerOut = () => {
-    setColor(getRandomColor());
-  };
+  const onPointerOver = () => setColor(getRandomColor());
+  const onPointerOut = () => setColor(getRandomColor());
 
   return (
     <mesh
@@ -29,7 +26,7 @@ const Cube = ({ ...props }) => {
       onPointerOut={onPointerOut}
       {...props}
     >
-      <Box args={[1, 1, 1]}>
+      <Box args={[size, size, size]}>
         <meshPhongMaterial color={color} />
       </Box>
     </mesh>

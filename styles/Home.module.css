@@ -30,11 +30,12 @@
     var(--max-font-size) * 1px
   );
   font-weight: 500;
+  left: var(--base-space);
   letter-spacing: -0.05rem;
   line-height: 1.1;
   margin: 0;
   max-width: 12ch;
-  left: var(--base-space);
+  mix-blend-mode: color;
   position: fixed;
   top: var(--base-space);
 }
@@ -43,7 +44,7 @@
   .heading {
     transform: rotate(-90deg) translateY(50%);
     transform-origin: left;
-    left: calc(var(--base-space) / 3);
+    left: calc(var(--base-space) / 2);
     top: 75%;
   }
 }
