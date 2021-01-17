@@ -63,6 +63,14 @@
   position: fixed;
 }
 
+.asterisk {
+  --size: 3vw;
+  height: var(--size);
+  stroke: hotpink;
+  stroke-width: 1rem;
+  width: var(--size);
+}
+
 .grid {
   counter-reset: num;
   display: flex;

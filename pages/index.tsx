@@ -15,7 +15,14 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.heading}>Three.js Fundamentals</h1>
-        <h2 className={styles.subheading}>React Three Fiber Version</h2>
+        <h2 className={styles.subheading}>
+          <svg className={styles.asterisk} viewBox="0 0 256 256">
+            <line x1="128" y1="40" x2="128" y2="216"></line>
+            <line x1="51.78976" y1="84" x2="204.21024" y2="172"></line>
+            <line x1="51.78976" y1="172" x2="204.21024" y2="84"></line>
+          </svg>
+          React Three Fiber Version
+        </h2>
 
         <section className={styles.grid}>
           <Link href="/01-fundamentals">
