@@ -1,10 +1,11 @@
+import { Plane, Sphere, useTexture } from '@react-three/drei';
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { Plane, Sphere, useTexture } from '@react-three/drei';
+import { Group, Material, MathUtils, Mesh, Texture } from 'three';
 import { NUM_SPHERES } from '..';
-import { Group, MathUtils, Material, Mesh, Texture } from 'three';
 
-export default function SphereWithShadow({ color, ndx, ...props }) {
+export default function SphereWithShadow(props) {
+  const { color, ndx, ...rest } = props;
   const PLANE_SIZE = 1;
   const SHADOW_SIZE = 4;
   const SPHERE_RADIUS = 1;
@@ -36,39 +37,32 @@ export default function SphereWithShadow({ color, ndx, ...props }) {
 
   return (
     <group ref={groupRef}>
-      <mesh
-        {...props}
-        ref={sphereRef}
+      <Sphere
+        args={[SPHERE_RADIUS, SPHERE_WIDTH_DIVISIONS, SPHERE_HEIGHT_DIVISIONS]}
         position-x={positionX}
         position-y={positionY}
+        ref={sphereRef}
+        {...rest}
       >
-        <Sphere
-          args={[
-            SPHERE_RADIUS,
-            SPHERE_WIDTH_DIVISIONS,
-            SPHERE_HEIGHT_DIVISIONS,
-          ]}
-        >
-          <meshPhongMaterial color={color} />
-        </Sphere>
-      </mesh>
+        <meshPhongMaterial attach="material" color={color} />
+      </Sphere>
 
-      <mesh
-        {...props}
+      <Plane
+        args={[PLANE_SIZE, PLANE_SIZE]}
         position-x={positionX}
         position-y={0.001}
         rotation-x={Math.PI * -0.5}
         scale={[SHADOW_SIZE, SHADOW_SIZE, SHADOW_SIZE]}
+        {...rest}
       >
-        <Plane args={[PLANE_SIZE, PLANE_SIZE]}>
-          <meshBasicMaterial
-            depthWrite={false}
-            ref={shadowRef}
-            map={texture}
-            transparent={true}
-          />
-        </Plane>
-      </mesh>
+        <meshBasicMaterial
+          attach="material"
+          depthWrite={false}
+          ref={shadowRef}
+          map={texture}
+          transparent={true}
+        />
+      </Plane>
     </group>
   );
 }

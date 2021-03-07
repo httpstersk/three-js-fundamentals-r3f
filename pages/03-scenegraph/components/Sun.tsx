@@ -1,18 +1,11 @@
-import { ReactNode, useRef } from 'react';
-import { useFrame } from 'react-three-fiber';
 import { Sphere } from '@react-three/drei';
-import { Color, Mesh, Vector3 } from 'three';
-import { ThreeVector3 } from '../../types';
+import { useRef } from 'react';
+import { useFrame } from 'react-three-fiber';
+import { Mesh } from 'three';
 import { rotateMeshY } from '../../utils';
 
-interface IProps {
-  children?: ReactNode;
-  emissive: Color;
-  position?: ThreeVector3;
-  scale?: ThreeVector3;
-}
-
-export default function Sun({ children, emissive, position, scale }: IProps) {
+export default function Sun(props) {
+  const { children, emissive, position, scale, ...rest } = props;
   const mesh = useRef<Mesh>();
   const radius = 1;
   const widthSegments = 6;
@@ -25,7 +18,7 @@ export default function Sun({ children, emissive, position, scale }: IProps) {
       <axesHelper args={[2]} />
       <gridHelper args={[2]} />
 
-      <Sphere args={[radius, widthSegments, heightSegments]}>
+      <Sphere args={[radius, widthSegments, heightSegments]} {...rest}>
         <meshPhongMaterial emissive={emissive} />
       </Sphere>
 

@@ -1,11 +1,11 @@
+import { Text } from '@react-three/drei';
+import { useReflow } from '@react-three/flex';
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { useReflow } from '@react-three/flex';
-import { Text } from '@react-three/drei';
 import { Mesh } from 'three';
 import { getRandomColor, rotateMesh } from '../../utils';
 
-export default function TextGeometry({ ...props }) {
+export default function TextGeometry(props) {
   const mesh = useRef<Mesh>();
   const reflow = useReflow();
   const font = '../fonts/Inter-Regular.woff';
@@ -14,19 +14,19 @@ export default function TextGeometry({ ...props }) {
   useFrame(() => rotateMesh(mesh));
 
   return (
-    <mesh {...props} ref={mesh}>
-      <Text
-        anchorX="center"
-        anchorY="middle"
-        color={getRandomColor()}
-        font={font}
-        fontSize={size}
-        onSync={reflow}
-        textAlign="center"
-      >
-        THREE.js
-        <meshBasicMaterial toneMapped={false} />
-      </Text>
-    </mesh>
+    <Text
+      anchorX="center"
+      anchorY="middle"
+      color={getRandomColor()}
+      font={font}
+      fontSize={size}
+      onSync={reflow}
+      ref={mesh}
+      textAlign="center"
+      {...props}
+    >
+      THREE.js
+      <meshBasicMaterial attach="material" toneMapped={false} />
+    </Text>
   );
 }

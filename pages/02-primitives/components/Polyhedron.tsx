@@ -1,11 +1,11 @@
+import { Polyhedron } from '@react-three/drei';
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { Polyhedron } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
 import { CONSTANTS } from '../../constants';
 import { getRandomColor, rotateMesh } from '../../utils';
 
-export default function PolyhedronGeometry({ ...props }) {
+export default function PolyhedronGeometry(props) {
   const mesh = useRef<Mesh>();
 
   const verticesOfCube = [
@@ -30,10 +30,16 @@ export default function PolyhedronGeometry({ ...props }) {
   useFrame(() => rotateMesh(mesh));
 
   return (
-    <mesh {...props} ref={mesh}>
-      <Polyhedron args={[verticesOfCube, indicesOfFaces, radius, detail]}>
-        <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
-      </Polyhedron>
-    </mesh>
+    <Polyhedron
+      args={[verticesOfCube, indicesOfFaces, radius, detail]}
+      ref={mesh}
+      {...props}
+    >
+      <meshPhongMaterial
+        attach="material"
+        color={getRandomColor()}
+        side={DoubleSide}
+      />
+    </Polyhedron>
   );
 }

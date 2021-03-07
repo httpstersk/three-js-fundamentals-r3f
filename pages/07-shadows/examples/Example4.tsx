@@ -1,6 +1,6 @@
+import { OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
-import { OrbitControls } from '@react-three/drei';
 import PerspectiveCamera from '../cameras/PerspectiveCamera';
 import { Cube, Plane, Room, Sphere } from '../components';
 import { PointLightWithHelper } from '../lights';

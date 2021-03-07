@@ -1,11 +1,11 @@
+import { Cylinder } from '@react-three/drei';
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { Cylinder } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
 import { CONSTANTS } from '../../constants';
 import { getRandomColor, rotateMesh } from '../../utils';
 
-export default function CylinderGeometry({ ...props }) {
+export default function CylinderGeometry(props) {
   const mesh = useRef<Mesh>();
   const radiusTop = CONSTANTS.EXAMPLES_HEIGHT / 2;
   const radiusBottom = CONSTANTS.EXAMPLES_HEIGHT / 2;
@@ -21,21 +21,25 @@ export default function CylinderGeometry({ ...props }) {
   useFrame(() => rotateMesh(mesh));
 
   return (
-    <mesh {...props} ref={mesh}>
-      <Cylinder
-        args={[
-          radiusTop,
-          radiusBottom,
-          height,
-          radialSegments,
-          heightSegments,
-          openEnded,
-          thetaStart,
-          thetaLength,
-        ]}
-      >
-        <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
-      </Cylinder>
-    </mesh>
+    <Cylinder
+      args={[
+        radiusTop,
+        radiusBottom,
+        height,
+        radialSegments,
+        heightSegments,
+        openEnded,
+        thetaStart,
+        thetaLength,
+      ]}
+      ref={mesh}
+      {...props}
+    >
+      <meshPhongMaterial
+        attach="material"
+        color={getRandomColor()}
+        side={DoubleSide}
+      />
+    </Cylinder>
   );
 }

@@ -1,10 +1,10 @@
+import { Plane } from '@react-three/drei';
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { Plane } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
 import { getRandomColor, rotateMesh } from '../../utils';
 
-export default function PlaneGeometry({ ...props }) {
+export default function PlaneGeometry(props) {
   const mesh = useRef<Mesh>();
   const width = 9;
   const height = 9;
@@ -16,10 +16,16 @@ export default function PlaneGeometry({ ...props }) {
   useFrame(() => rotateMesh(mesh));
 
   return (
-    <mesh {...props} ref={mesh}>
-      <Plane args={[width, height, widthSegments, heightSegments]}>
-        <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
-      </Plane>
-    </mesh>
+    <Plane
+      args={[width, height, widthSegments, heightSegments]}
+      ref={mesh}
+      {...props}
+    >
+      <meshPhongMaterial
+        attach="material"
+        color={getRandomColor()}
+        side={DoubleSide}
+      />
+    </Plane>
   );
 }

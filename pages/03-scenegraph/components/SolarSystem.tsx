@@ -1,16 +1,12 @@
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Color, Group } from 'three';
+import { rotateMeshY } from '../../utils';
 import Earth from './Earth';
 import Moon from './Moon';
 import Sun from './Sun';
-import { rotateMeshY } from '../../utils';
 
-interface IProps {
-  props?: any;
-}
-
-export default function SolarSystem({ ...props }: IProps) {
+export default function SolarSystem({ ...props }) {
   const groupRef = useRef<Group>();
   useFrame(() => rotateMeshY(groupRef));
 

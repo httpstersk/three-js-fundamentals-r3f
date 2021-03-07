@@ -1,6 +1,6 @@
+import { OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
-import { OrbitControls } from '@react-three/drei';
 import { Cube, Plane, Sphere } from './components';
 import {
   AmbientLight,

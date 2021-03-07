@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
 import { useHelper } from '@react-three/drei';
+import { useEffect, useRef, useState } from 'react';
 import { DirectionalLightHelper, Object3D } from 'three';
 import { makeButton, makeFolder, useTweaks } from 'use-tweaks';
 import { CONSTANTS } from '../../constants';

@@ -1,11 +1,11 @@
+import { Sphere } from '@react-three/drei';
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { Sphere } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
 import { CONSTANTS } from '../../constants';
 import { getRandomColor, rotateMesh } from '../../utils';
 
-export default function SphereGeometry({ ...props }) {
+export default function SphereGeometry(props) {
   const mesh = useRef<Mesh>();
   const radius = CONSTANTS.EXAMPLES_RADIUS;
   const widthSegments = 12;
@@ -20,7 +20,7 @@ export default function SphereGeometry({ ...props }) {
   useFrame(() => rotateMesh(mesh));
 
   return (
-    <mesh {...props} ref={mesh}>
+    <mesh>
       <Sphere
         args={[
           radius,
@@ -31,8 +31,14 @@ export default function SphereGeometry({ ...props }) {
           thetaStart,
           thetaLength,
         ]}
+        ref={mesh}
+        {...props}
       >
-        <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
+        <meshPhongMaterial
+          attach="material"
+          color={getRandomColor()}
+          side={DoubleSide}
+        />
       </Sphere>
     </mesh>
   );

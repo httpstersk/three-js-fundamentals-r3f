@@ -1,10 +1,10 @@
-import { useMemo, useRef } from 'react';
 import { useTexture } from '@react-three/drei';
+import { useMemo, useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Face3, Geometry, Mesh, Texture, Vector2, Vector3 } from 'three';
 
-const CubeWithFaceVertexUv = ({ ...props }) => {
-  const { color, ndx } = props;
+const CubeWithFaceVertexUv = (props) => {
+  const { color, ndx, ...rest } = props;
   const mesh = useRef<Mesh>();
   const texture = useTexture('/static/images/star.png') as Texture;
 
@@ -90,7 +90,7 @@ const CubeWithFaceVertexUv = ({ ...props }) => {
   }, []);
 
   return (
-    <mesh geometry={geometry} ref={mesh} {...props}>
+    <mesh geometry={geometry} ref={mesh} {...rest}>
       <meshPhongMaterial color={color} map={texture} />
     </mesh>
   );

@@ -1,10 +1,10 @@
+import { Box } from '@react-three/drei';
 import { useRef, useState } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { Box } from '@react-three/drei';
 import { Mesh } from 'three';
 import { getRandomColor } from '../utils';
 
-const Cube = ({ ...props }) => {
+const Cube = (props) => {
   const { innerHeight, innerWidth } = window;
   const size = innerWidth / innerHeight / 2;
   const mesh = useRef<Mesh>();
@@ -20,16 +20,15 @@ const Cube = ({ ...props }) => {
   const onPointerOut = () => setColor(getRandomColor());
 
   return (
-    <mesh
-      ref={mesh}
+    <Box
+      args={[size, size, size]}
       onPointerOver={onPointerOver}
       onPointerOut={onPointerOut}
+      ref={mesh}
       {...props}
     >
-      <Box args={[size, size, size]}>
-        <meshPhongMaterial color={color} />
-      </Box>
-    </mesh>
+      <meshPhongMaterial attach="material" color={color} />
+    </Box>
   );
 };
 

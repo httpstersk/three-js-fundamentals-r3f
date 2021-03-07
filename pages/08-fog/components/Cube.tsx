@@ -1,10 +1,10 @@
+import { Box } from '@react-three/drei';
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { Box } from '@react-three/drei';
 import { Mesh } from 'three';
 
-const Cube = ({ ...props }) => {
-  const { color, ndx } = props;
+const Cube = (props) => {
+  const { color, ndx, ...rest } = props;
   const mesh = useRef<Mesh>();
 
   useFrame(() => {
@@ -17,11 +17,9 @@ const Cube = ({ ...props }) => {
   });
 
   return (
-    <mesh {...props} ref={mesh}>
-      <Box args={[1, 1, 1]}>
-        <meshPhongMaterial color={color} />
-      </Box>
-    </mesh>
+    <Box args={[1, 1, 1]} ref={mesh} {...rest}>
+      <meshPhongMaterial color={color} />
+    </Box>
   );
 };
 

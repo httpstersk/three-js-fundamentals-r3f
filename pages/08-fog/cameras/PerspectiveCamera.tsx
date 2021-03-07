@@ -1,8 +1,8 @@
-import { useRef } from 'react';
 import { PerspectiveCamera } from '@react-three/drei';
+import { useRef } from 'react';
 import { PerspectiveCamera as PerspectiveCameraType } from 'three';
 
-export default function Perspective({ ...props }) {
+export default function Perspective(props) {
   const camera = useRef<PerspectiveCameraType>();
 
   return (

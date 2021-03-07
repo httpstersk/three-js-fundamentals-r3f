@@ -1,6 +1,6 @@
+import { Tube } from '@react-three/drei';
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { Tube } from '@react-three/drei';
 import { Curve, DoubleSide, Mesh, Vector3 } from 'three';
 import { getRandomColor, rotateMesh } from '../../utils';
 
@@ -20,7 +20,7 @@ class CustomSinCurve extends Curve {
   }
 }
 
-export default function TubeGeometry({ ...props }) {
+export default function TubeGeometry(props) {
   const mesh = useRef<Mesh>();
   const path = new CustomSinCurve(4);
   const radius = 1;
@@ -33,14 +33,16 @@ export default function TubeGeometry({ ...props }) {
   useFrame(() => rotateMesh(mesh));
 
   return (
-    <mesh {...props} ref={mesh}>
-      <Tube args={[path, tubularSegments, radius, radialSegments, closed]}>
-        <meshPhongMaterial
-          side={DoubleSide}
-          color={getRandomColor()}
-          side={DoubleSide}
-        />
-      </Tube>
-    </mesh>
+    <Tube
+      args={[path, tubularSegments, radius, radialSegments, closed]}
+      ref={mesh}
+      {...props}
+    >
+      <meshPhongMaterial
+        attach="material"
+        side={DoubleSide}
+        color={getRandomColor()}
+      />
+    </Tube>
   );
 }

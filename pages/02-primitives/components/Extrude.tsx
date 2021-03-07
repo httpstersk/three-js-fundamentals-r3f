@@ -1,10 +1,10 @@
+import { Extrude } from '@react-three/drei';
 import { useMemo, useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { Extrude } from '@react-three/drei';
 import { DoubleSide, Mesh, Shape } from 'three';
 import { getRandomColor, rotateMesh } from '../../utils';
 
-export default function ExtrudeGeometry({ ...props }) {
+export default function ExtrudeGeometry(props) {
   const mesh = useRef<Mesh>();
 
   const shape = useMemo(() => {
@@ -38,10 +38,8 @@ export default function ExtrudeGeometry({ ...props }) {
   useFrame(() => rotateMesh(mesh));
 
   return (
-    <mesh {...props} ref={mesh}>
-      <Extrude args={[shape, extrudeSettings]}>
-        <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
-      </Extrude>
-    </mesh>
+    <Extrude args={[shape, extrudeSettings]} ref={mesh} {...props}>
+      <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
+    </Extrude>
   );
 }

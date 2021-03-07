@@ -2,8 +2,8 @@ import { useMemo, useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Color, Face3, Geometry, Mesh, Vector3 } from 'three';
 
-const CubeWithVertexColors = ({ ...props }) => {
-  const { ndx } = props;
+const CubeWithVertexColors = (props) => {
+  const { ndx, ...rest } = props;
   const mesh = useRef<Mesh>();
 
   useFrame(() => {
@@ -75,7 +75,7 @@ const CubeWithVertexColors = ({ ...props }) => {
   }, []);
 
   return (
-    <mesh geometry={geometry} ref={mesh} {...props}>
+    <mesh geometry={geometry} ref={mesh} {...rest}>
       <meshBasicMaterial vertexColors />
     </mesh>
   );

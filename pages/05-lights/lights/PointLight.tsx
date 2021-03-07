@@ -1,7 +1,7 @@
-import { useRef, useState } from 'react';
 import { useHelper } from '@react-three/drei';
-import { makeButton, useTweaks } from 'use-tweaks';
+import { useRef, useState } from 'react';
 import { PointLightHelper } from 'three';
+import { makeButton, useTweaks } from 'use-tweaks';
 import { CONSTANTS } from '../../constants';
 
 export default function PointLight() {

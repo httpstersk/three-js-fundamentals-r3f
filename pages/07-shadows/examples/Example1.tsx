@@ -1,10 +1,10 @@
+import { OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
-import { OrbitControls } from '@react-three/drei';
+import { NUM_SPHERES } from '..';
 import PerspectiveCamera from '../cameras/PerspectiveCamera';
 import { BouncingSpheres, Plane } from '../components';
 import { DirectionalLight, HemisphereLight } from '../lights';
-import { NUM_SPHERES } from '..';
 
 export default function Example1() {
   return (

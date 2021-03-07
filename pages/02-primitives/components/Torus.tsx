@@ -1,10 +1,10 @@
+import { Torus } from '@react-three/drei';
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { Torus } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
 import { getRandomColor, rotateMesh } from '../../utils';
 
-export default function TorusGeometry({ ...props }) {
+export default function TorusGeometry(props) {
   const mesh = useRef<Mesh>();
   const radius = 5;
   const tubeRadius = 2;
@@ -16,10 +16,16 @@ export default function TorusGeometry({ ...props }) {
   useFrame(() => rotateMesh(mesh));
 
   return (
-    <mesh {...props} ref={mesh}>
-      <Torus args={[radius, tubeRadius, radialSegments, tubularSegments]}>
-        <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
-      </Torus>
-    </mesh>
+    <Torus
+      args={[radius, tubeRadius, radialSegments, tubularSegments]}
+      ref={mesh}
+      {...props}
+    >
+      <meshPhongMaterial
+        attach="material"
+        color={getRandomColor()}
+        side={DoubleSide}
+      />
+    </Torus>
   );
 }

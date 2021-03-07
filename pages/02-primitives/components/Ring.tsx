@@ -1,11 +1,11 @@
+import { Ring } from '@react-three/drei';
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { Ring } from '@react-three/drei';
 import { DoubleSide, Mesh } from 'three';
 import { CONSTANTS } from '../../constants';
 import { getRandomColor, rotateMesh } from '../../utils';
 
-export default function RingGeometry({ ...props }) {
+export default function RingGeometry(props) {
   const mesh = useRef<Mesh>();
   const innerRadius = 2;
   const outerRadius = CONSTANTS.EXAMPLES_RADIUS;
@@ -19,19 +19,23 @@ export default function RingGeometry({ ...props }) {
   useFrame(() => rotateMesh(mesh));
 
   return (
-    <mesh {...props} ref={mesh}>
-      <Ring
-        args={[
-          innerRadius,
-          outerRadius,
-          thetaSegments,
-          phiSegments,
-          thetaStart,
-          thetaLength,
-        ]}
-      >
-        <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
-      </Ring>
-    </mesh>
+    <Ring
+      args={[
+        innerRadius,
+        outerRadius,
+        thetaSegments,
+        phiSegments,
+        thetaStart,
+        thetaLength,
+      ]}
+      ref={mesh}
+      {...props}
+    >
+      <meshPhongMaterial
+        attach="material"
+        color={getRandomColor()}
+        side={DoubleSide}
+      />
+    </Ring>
   );
 }

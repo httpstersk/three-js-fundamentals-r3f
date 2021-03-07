@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
 import { Plane, useTexture } from '@react-three/drei';
+import { useEffect, useRef } from 'react';
 import {
   DoubleSide,
   Mesh,
@@ -10,7 +10,7 @@ import {
 
 const PLANE_SIZE = 40;
 
-export default function PlaneGeometry({ ...props }) {
+export default function PlaneGeometry(props) {
   const mesh = useRef<Mesh>();
   const texture = useTexture('/static/images/checker.png') as Texture;
 
@@ -21,10 +21,19 @@ export default function PlaneGeometry({ ...props }) {
   }, [texture]);
 
   return (
-    <mesh ref={mesh} rotation-x={Math.PI * -0.5} {...props}>
-      <Plane receiveShadow args={[PLANE_SIZE, PLANE_SIZE]}>
-        <meshPhongMaterial flatShading side={DoubleSide} map={texture} />
-      </Plane>
-    </mesh>
+    <Plane
+      args={[PLANE_SIZE, PLANE_SIZE]}
+      receiveShadow
+      ref={mesh}
+      rotation-x={Math.PI * -0.5}
+      {...props}
+    >
+      <meshPhongMaterial
+        attach="material"
+        flatShading
+        map={texture}
+        side={DoubleSide}
+      />
+    </Plane>
   );
 }

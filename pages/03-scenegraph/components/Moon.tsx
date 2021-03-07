@@ -1,18 +1,11 @@
+import { Sphere } from '@react-three/drei';
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { Sphere } from '@react-three/drei';
-import { Color, Mesh } from 'three';
-import { ThreeVector3 } from '../../types';
+import { Mesh } from 'three';
 import { rotateMeshY } from '../../utils';
 
-interface IProps {
-  color: Color;
-  emissive: Color;
-  position?: ThreeVector3;
-  scale?: ThreeVector3;
-}
-
-export default function Moon({ color, emissive, position, scale }: IProps) {
+export default function Moon(props) {
+  const { color, emissive, position, scale, ...rest } = props;
   const mesh = useRef<Mesh>();
   const radius = 1;
   const widthSegments = 6;
@@ -25,7 +18,7 @@ export default function Moon({ color, emissive, position, scale }: IProps) {
       <axesHelper args={[2]} />
       <gridHelper args={[2]} />
 
-      <Sphere args={[radius, widthSegments, heightSegments]}>
+      <Sphere args={[radius, widthSegments, heightSegments]} {...rest}>
         <meshPhongMaterial color={color} emissive={emissive} />
       </Sphere>
     </mesh>

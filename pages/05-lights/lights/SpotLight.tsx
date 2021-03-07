@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
 import { useHelper } from '@react-three/drei';
+import { useEffect, useRef, useState } from 'react';
+import { Object3D, SpotLightHelper } from 'three';
 import { makeButton, makeFolder, useTweaks } from 'use-tweaks';
-import { SpotLightHelper, Object3D } from 'three';
 import { CONSTANTS } from '../../constants';
 
 export default function SpotLight() {

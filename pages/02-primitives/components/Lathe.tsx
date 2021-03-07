@@ -1,10 +1,10 @@
+import { Lathe } from '@react-three/drei';
 import { useEffect, useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { Lathe } from '@react-three/drei';
 import { DoubleSide, Mesh, Vector2 } from 'three';
 import { getRandomColor, rotateMesh } from '../../utils';
 
-export default function LatheGeometry({ ...props }) {
+export default function LatheGeometry(props) {
   const mesh = useRef<Mesh>();
   const points = [];
 
@@ -23,10 +23,12 @@ export default function LatheGeometry({ ...props }) {
   console.log(points);
 
   return (
-    <mesh {...props} ref={mesh}>
-      <Lathe args={[points, segments, phiStart, phiLength]}>
-        <meshPhongMaterial side={DoubleSide} color={getRandomColor()} />
-      </Lathe>
-    </mesh>
+    <Lathe args={[points, segments, phiStart, phiLength]} ref={mesh} {...props}>
+      <meshPhongMaterial
+        attach="material"
+        color={getRandomColor()}
+        side={DoubleSide}
+      />
+    </Lathe>
   );
 }
