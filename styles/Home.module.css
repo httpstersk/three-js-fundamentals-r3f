@@ -21,11 +21,11 @@
 }
 
 .heading {
-  left: calc(var(--base-space) * 1.5);
+  left: calc(var(--base-space) * 1.75);
   margin: 0;
   mix-blend-mode: color;
   position: fixed;
-  top: calc(var(--base-space) * 1.85);
+  top: calc(var(--base-space) * 2);
 }
 
 @media (max-width: 900px) {
