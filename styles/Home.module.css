@@ -21,23 +21,11 @@
 }
 
 .heading {
-  --min-font-size: 60;
-  --max-font-size: 120;
-  font-family: Karelia;
-  font-size: clamp(
-    var(--min-font-size) * 1px,
-    var(--fluid-size),
-    var(--max-font-size) * 1px
-  );
-  font-weight: 500;
-  left: var(--base-space);
-  letter-spacing: -0.05rem;
-  line-height: 1.1;
+  left: calc(var(--base-space) * 1.5);
   margin: 0;
-  max-width: 12ch;
   mix-blend-mode: color;
   position: fixed;
-  top: var(--base-space);
+  top: calc(var(--base-space) * 1.85);
 }
 
 @media (max-width: 900px) {
@@ -53,13 +41,14 @@
   --min-font-size: 16;
   --max-font-size: 20;
   bottom: var(--base-space);
+  color: hotpink;
   font-size: clamp(
     var(--min-font-size) * 1px,
     var(--fluid-size),
     var(--max-font-size) * 1px
   );
   font-weight: 400;
-  left: var(--base-space);
+  left: calc(var(--base-space) * 1.5);
   position: fixed;
 }
 
@@ -79,7 +68,7 @@
   padding: var(--base-space);
   height: 100vh;
   overflow-y: scroll;
-  max-width: max(20rem, 42vw);
+  max-width: max(20rem, 33.33vw);
   pointer-events: initial;
 }
 
@@ -128,7 +117,7 @@
 
 .card h3 {
   --min-font-size: 25;
-  --max-font-size: 60;
+  --max-font-size: 32;
   font-size: clamp(
     var(--min-font-size) * 1px,
     var(--fluid-size),
