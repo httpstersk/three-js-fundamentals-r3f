@@ -9,6 +9,31 @@ export default function Home() {
       <Head>
         <title>Three.js Fundamentals (React Three Fiber Version)</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:url"
+          content="https://github.com/belaklubos/three-js-fundamentals-r3f"
+          key="ogurl"
+        />
+        <meta
+          property="og:image"
+          content="/static/images/homepage-og-image.png"
+          key="ogimage"
+        />
+        <meta
+          property="og:site_name"
+          content="Three.js Fundamentals (R3F Version)"
+          key="ogsitename"
+        />
+        <meta
+          property="og:title"
+          content="Three.js Fundamentals (React Three Fiber Version)"
+          key="ogtitle"
+        />
+        <meta
+          property="og:description"
+          content="Recreation of the Three.js Fundamentals in react-three-fiber renderer"
+          key="ogdesc"
+        />
       </Head>
 
       <HomepageScene />
