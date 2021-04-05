@@ -1,7 +1,7 @@
 import { OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
-import { CubesFaceVertexUv } from './components';
+import { CubesTypedArrays } from './components';
 
 const CUBES = [
   {
@@ -26,10 +26,8 @@ export default function Scene(controlsProps) {
     <Canvas
       camera={{ aspect: 2, far: 100, fov: 75, near: 0.1, position: [0, 0, 5] }}
     >
-      {/* <CubesVertexNormal cubes={CUBES} /> */}
-
       <Suspense fallback={null}>
-        <CubesFaceVertexUv cubes={CUBES} />
+        <CubesTypedArrays cubes={CUBES} />
       </Suspense>
 
       <directionalLight
