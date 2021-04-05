@@ -2,7 +2,7 @@ import { Extrude } from '@react-three/drei';
 import { useMemo, useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { DoubleSide, Mesh, Shape } from 'three';
-import { getRandomColor, rotateMesh } from '../../utils';
+import { getRandomColor, rotateMesh } from '@/utils/.';
 
 export default function ExtrudeGeometry(props) {
   const mesh = useRef<Mesh>();

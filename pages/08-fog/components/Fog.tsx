@@ -1,6 +1,6 @@
 import { useControls } from 'leva';
 import { Color } from 'three';
-import { CONSTANTS } from '../../constants';
+import CONSTANTS from '@/constants/.';
 
 export default function Fog(props) {
   const { color, far, near } = useControls('Fog', {

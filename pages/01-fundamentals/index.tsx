@@ -1,6 +1,6 @@
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from 'react-three-fiber';
-import Cube from './Cube';
+import Cube from './components/Cube';
 
 const CUBES = [
   {

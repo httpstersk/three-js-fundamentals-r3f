@@ -9,7 +9,7 @@ import {
   Object3D,
   OrthographicCamera,
 } from 'three';
-import { CONSTANTS } from '../../constants';
+import CONSTANTS from '@/constants/.';
 
 export default function DirectionalLightWithHelper() {
   const [isHelperLightOn, toggleLightHelper] = useState(true);

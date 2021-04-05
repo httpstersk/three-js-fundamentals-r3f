@@ -1,7 +1,7 @@
 import { OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
-import { SixTextures } from './components';
+import SixTextures from './components/SixTextures';
 
 export default function Scene(controlsProps) {
   return (

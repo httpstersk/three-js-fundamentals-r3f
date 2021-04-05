@@ -1,4 +1,4 @@
-export const CONSTANTS = {
+export default {
   EXAMPLES_HEIGHT: 8,
   EXAMPLES_PADDING: 10,
   EXAMPLES_RADIUS: 7,

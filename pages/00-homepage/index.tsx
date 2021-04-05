@@ -1,6 +1,6 @@
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
-import Cube from './Cube';
+import Cube from './components/Cube';
 
 export default function HomepageScene(controlsProps) {
   return (

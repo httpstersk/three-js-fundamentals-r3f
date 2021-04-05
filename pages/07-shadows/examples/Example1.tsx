@@ -3,8 +3,10 @@ import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
 import { NUM_SPHERES } from '..';
 import PerspectiveCamera from '../cameras/PerspectiveCamera';
-import { BouncingSpheres, Plane } from '../components';
-import { DirectionalLight, HemisphereLight } from '../lights';
+import BouncingSpheres from '../components/BouncingSpheres';
+import Plane from '../components/Plane';
+import DirectionalLight from '../lights/DirectionalLight';
+import HemisphereLight from '../lights/HemisphereLight';
 
 export default function Example1(controlsProps) {
   return (

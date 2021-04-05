@@ -1,7 +1,7 @@
-import { MutableRefObject } from 'react';
-import { Mesh, Group } from 'three';
-import { CONSTANTS } from '../constants';
+import CONSTANTS from '@/constants/.';
 import { randomColor } from 'randomcolor';
+import { MutableRefObject } from 'react';
+import { Group, Mesh } from 'three';
 
 export const rotateMesh = (meshRef: MutableRefObject<Mesh | Group>) => {
   if (meshRef.current) {

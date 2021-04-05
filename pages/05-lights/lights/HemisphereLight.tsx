@@ -1,5 +1,5 @@
 import { useControls } from 'leva';
-import { CONSTANTS } from '../../constants';
+import CONSTANTS from '@/constants/.';
 
 export default function HemisphereLight() {
   const { groundColor, skyColor, intensity } = useControls('Hemisphere Light', {

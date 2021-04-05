@@ -2,7 +2,7 @@ import { Box, useTexture } from '@react-three/drei';
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Mesh, Texture } from 'three';
-import { rotateMesh } from '../../utils';
+import { rotateMesh } from '@/utils/.';
 
 export default function HelloTexture(props) {
   const mesh = useRef<Mesh>();

@@ -1,7 +1,7 @@
 import { OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
-import { CubesTypedArrays } from './components';
+import CubesTypedArrays from './components/CubesTypedArrays';
 
 const CUBES = [
   {

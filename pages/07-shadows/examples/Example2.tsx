@@ -2,8 +2,10 @@ import { OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
 import PerspectiveCamera from '../cameras/PerspectiveCamera';
-import { Cube, Plane, Sphere } from '../components';
-import { DirectionalLightWithHelper } from '../lights';
+import Cube from '../components/Cube';
+import Plane from '../components/Plane';
+import Sphere from '../components/Sphere';
+import DirectionalLightWithHelper from '../lights/DirectionalLightWithHelper';
 
 export default function Example2(controlsProps) {
   return (

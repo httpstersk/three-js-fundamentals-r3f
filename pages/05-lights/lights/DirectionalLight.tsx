@@ -2,7 +2,7 @@ import { useHelper } from '@react-three/drei';
 import { useControls } from 'leva';
 import { useEffect, useRef, useState } from 'react';
 import { DirectionalLightHelper, Object3D } from 'three';
-import { CONSTANTS } from '../../constants';
+import CONSTANTS from '@/constants/.';
 
 export default function DirectionalLight() {
   const [isHelperOn, toggleHelper] = useState(false);

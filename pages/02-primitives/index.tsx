@@ -1,27 +1,25 @@
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from 'react-three-fiber';
-import {
-  Cone,
-  Cube,
-  Cylinder,
-  Dodecahedron,
-  Example,
-  Extrude,
-  FlatCircle,
-  Icosahedron,
-  Octahedron,
-  Parametric,
-  Plane,
-  Polyhedron,
-  Ring,
-  Row,
-  Sphere,
-  Tetrahedron,
-  Text,
-  Torus,
-  TorusKnot,
-  Tube,
-} from './components';
+import Cone from './components/Cone';
+import Cube from './components/Cube';
+import Cylinder from './components/Cylinder';
+import Dodecahedron from './components/Dodecahedron';
+import Example from './components/Example';
+import Extrude from './components/Extrude';
+import FlatCircle from './components/FlatCircle';
+import Icosahedron from './components/Icosahedron';
+import Octahedron from './components/Octahedron';
+import Parametric from './components/Parametric';
+import Plane from './components/Plane';
+import Polyhedron from './components/Polyhedron';
+import Ring from './components/Ring';
+import Row from './components/Row';
+import Sphere from './components/Sphere';
+import Tetrahedron from './components/Tetrahedron';
+import Text from './components/Text';
+import Torus from './components/Torus';
+import TorusKnot from './components/TorusKnot';
+import Tube from './components/Tube';
 
 export default function Scene(controlsProps) {
   return (

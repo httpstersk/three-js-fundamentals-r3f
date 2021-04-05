@@ -1,6 +1,6 @@
 import { useControls } from 'leva';
 import { useRef } from 'react';
-import { CONSTANTS } from '../../constants';
+import CONSTANTS from '@/constants/.';
 
 export default function RectAreaLight() {
   const {

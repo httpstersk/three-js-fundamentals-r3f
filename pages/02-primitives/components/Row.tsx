@@ -1,5 +1,5 @@
 import { Flex } from '@react-three/flex';
-import { CONSTANTS } from '../../constants';
+import CONSTANTS from '@/constants/.';
 
 export default function Row({ align, children, ...props }) {
   return (

@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { DoubleSide, Mesh } from 'three';
 import { ParametricGeometries } from 'three-full';
-import { getRandomColor, rotateMesh } from '../../utils';
+import { getRandomColor, rotateMesh } from '@/utils/.';
 
 export default function ParametricGeometry(props) {
   const mesh = useRef<Mesh>();

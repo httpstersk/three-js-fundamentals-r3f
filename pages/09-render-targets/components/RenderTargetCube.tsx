@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { createPortal, useFrame } from 'react-three-fiber';
 import {
   Color,
@@ -7,8 +7,9 @@ import {
   Scene,
   WebGLRenderTarget,
 } from 'three';
-import { CONSTANTS } from '../../constants';
+import CONSTANTS from '@/constants/.';
 import PerspectiveCamera from '../cameras/PerspectiveCamera';
+import { Box } from '@react-three/drei';
 
 const RenderTargetCube = ({ children, ...props }) => {
   const camera = useRef<PerspectiveCameraType>();
@@ -41,9 +42,9 @@ const RenderTargetCube = ({ children, ...props }) => {
         position={[-1, 2, 4]}
       />
 
-      <boxBufferGeometry args={[1, 1, 1]} ref={mesh}>
+      <Box args={[1, 1, 1]} ref={mesh}>
         <meshPhongMaterial map={target.texture} />
-      </boxBufferGeometry>
+      </Box>
     </>
   );
 };

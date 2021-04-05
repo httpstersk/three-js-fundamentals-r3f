@@ -2,7 +2,7 @@ import { useHelper } from '@react-three/drei';
 import { useControls } from 'leva';
 import { useRef, useState } from 'react';
 import { PointLightHelper } from 'three';
-import { CONSTANTS } from '../../constants';
+import CONSTANTS from '@/constants/.';
 
 export default function PointLight() {
   const [isHelperOn, toggleHelper] = useState(false);

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Color, Group } from 'three';
-import { rotateMeshY } from '../../utils';
+import { rotateMeshY } from '@/utils/.';
 import Earth from './Earth';
 import Moon from './Moon';
 import Sun from './Sun';

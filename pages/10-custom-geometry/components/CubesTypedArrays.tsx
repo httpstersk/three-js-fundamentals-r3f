@@ -1,4 +1,4 @@
-import { CubeTypedArrays } from '.';
+import CubeTypedArrays from './CubeTypedArrays';
 
 const CubesTypedArrays = ({ cubes }) => (
   <>

@@ -9,7 +9,7 @@ import {
   SpotLight,
   SpotLightHelper,
 } from 'three';
-import { CONSTANTS } from '../../constants';
+import CONSTANTS from '@/constants/.';
 
 export default function SpotLightWithHelper() {
   const [isHelperLightOn, toggleLightHelper] = useState(true);

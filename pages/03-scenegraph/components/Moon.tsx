@@ -2,7 +2,7 @@ import { Sphere } from '@react-three/drei';
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Mesh } from 'three';
-import { rotateMeshY } from '../../utils';
+import { rotateMeshY } from '@/utils/.';
 
 export default function Moon(props) {
   const { color, emissive, position, scale, ...rest } = props;

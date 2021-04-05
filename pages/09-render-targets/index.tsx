@@ -3,7 +3,8 @@ import React, { Fragment } from 'react';
 import { Canvas } from 'react-three-fiber';
 import { Color } from 'three';
 import PerspectiveCamera from './cameras/PerspectiveCamera';
-import { Cube, RenderTargetCube } from './components';
+import Cube from './components/Cube';
+import RenderTargetCube from './components/RenderTargetCube';
 
 const CUBES = [
   {

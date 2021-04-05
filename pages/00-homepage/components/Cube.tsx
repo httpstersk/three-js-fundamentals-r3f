@@ -2,7 +2,7 @@ import { Box } from '@react-three/drei';
 import { useRef, useState } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Mesh } from 'three';
-import { getRandomColor } from '../utils';
+import { getRandomColor } from '@/utils/.';
 
 const Cube = (props) => {
   const { innerHeight, innerWidth } = window;

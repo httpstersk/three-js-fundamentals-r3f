@@ -3,7 +3,7 @@ import { useReflow } from '@react-three/flex';
 import { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { Mesh } from 'three';
-import { getRandomColor, rotateMesh } from '../../utils';
+import { getRandomColor, rotateMesh } from '@/utils/.';
 
 export default function TextGeometry(props) {
   const mesh = useRef<Mesh>();
