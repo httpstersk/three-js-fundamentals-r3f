@@ -1,14 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
 import { useHelper } from '@react-three/drei';
+import { useControls } from 'leva';
+import { useEffect, useRef, useState } from 'react';
 import { useThree } from 'react-three-fiber';
 import {
-  SpotLight,
-  SpotLightHelper,
   CameraHelper,
   Object3D,
   PerspectiveCamera,
+  SpotLight,
+  SpotLightHelper,
 } from 'three';
-import { makeButton, makeFolder, useTweaks } from 'use-tweaks';
 import { CONSTANTS } from '../../constants';
 
 export default function SpotLightWithHelper() {
@@ -30,38 +30,28 @@ export default function SpotLightWithHelper() {
     x,
     y,
     z,
-  } = useTweaks('Spot Light', {
+  } = useControls('Spot Light', {
     color: CONSTANTS.DEFAULT_LIGHT_COLOR,
     intensity: { value: CONSTANTS.DEFAULT_LIGHT_INTENSITY, min: 0, max: 2 },
     distance: { value: 0, min: 0, max: 40 },
     angle: { value: 0.6, min: 0, max: 1 },
     penumbra: { value: 0, min: 0, max: 1 },
-    ...makeFolder(
-      'Shadow Camera',
-      {
-        near: { value: 0.5, min: 0.1, max: 50 },
-        far: { value: 50, min: 0.1, max: 50 },
-      },
-      true
-    ),
-    ...makeFolder(
-      'Positions',
-      {
-        targetX: { value: -4, min: -10, max: 10 },
-        targetY: { value: 0, min: 0, max: 10 },
-        targetZ: { value: -4, min: -10, max: 10 },
-        x: { value: 0, min: -10, max: 10 },
-        y: { value: 10, min: 0, max: 10 },
-        z: { value: 10, min: -10, max: 10 },
-      },
-      false
-    ),
-    ...makeButton(`Toggle Light Helper`, () =>
-      toggleLightHelper((state) => !state)
-    ),
-    ...makeButton(`Toggle Shadow Helper`, () =>
-      toggleShadowHelper((state) => !state)
-    ),
+    near: { value: 0.5, min: 0.1, max: 50 },
+    far: { value: 50, min: 0.1, max: 50 },
+    targetX: { value: -4, min: -10, max: 10 },
+    targetY: { value: 0, min: 0, max: 10 },
+    targetZ: { value: -4, min: -10, max: 10 },
+    x: { value: 0, min: -10, max: 10 },
+    y: { value: 10, min: 0, max: 10 },
+    z: { value: 10, min: -10, max: 10 },
+    'Show Light Helper': {
+      value: !isHelperLightOn,
+      onChange: () => toggleLightHelper((state) => !state),
+    },
+    'Show Shadow Helper': {
+      value: !isHelperShadowOn,
+      onChange: () => toggleShadowHelper((state) => !state),
+    },
   });
 
   const lightRef = useRef<SpotLight>();

@@ -1,38 +1,27 @@
-import { useRef, useState } from 'react';
 import { useHelper } from '@react-three/drei';
+import { useControls } from 'leva';
+import { useRef, useState } from 'react';
 import { PointLight, PointLightHelper } from 'three';
-import { makeButton, makeFolder, useTweaks } from 'use-tweaks';
 import { CONSTANTS } from '../../constants';
 
 export default function PointLightWithHelper() {
   const [isHelperLightOn, toggleLightHelper] = useState(true);
 
-  const { color, distance, intensity, far, near, x, y, z } = useTweaks(
+  const { color, distance, intensity, far, near, x, y, z } = useControls(
     'Point Light',
     {
       color: CONSTANTS.DEFAULT_LIGHT_COLOR,
       intensity: { value: CONSTANTS.DEFAULT_LIGHT_INTENSITY, min: 0, max: 2 },
       distance: { value: 0, min: 0, max: 40 },
-      ...makeFolder(
-        'Shadow Camera',
-        {
-          near: { value: 0.5, min: 0.1, max: 50 },
-          far: { value: 50, min: 0.1, max: 50 },
-        },
-        true
-      ),
-      ...makeFolder(
-        'Positions',
-        {
-          x: { value: 0, min: -10, max: 10 },
-          y: { value: 10, min: 0, max: 10 },
-          z: { value: 0, min: -10, max: 10 },
-        },
-        false
-      ),
-      ...makeButton(`Toggle Light Helper`, () =>
-        toggleLightHelper((state) => !state)
-      ),
+      near: { value: 0.5, min: 0.1, max: 50 },
+      far: { value: 50, min: 0.1, max: 50 },
+      x: { value: 0, min: -10, max: 10 },
+      y: { value: 10, min: 0, max: 10 },
+      z: { value: 0, min: -10, max: 10 },
+      'Show Helper': {
+        value: !isHelperLightOn,
+        onChange: () => toggleLightHelper((state) => !state),
+      },
     }
   );
 

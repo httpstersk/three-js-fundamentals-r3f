@@ -1,11 +1,11 @@
 import { PerspectiveCamera } from '@react-three/drei';
+import { useControls } from 'leva';
 import { useRef } from 'react';
 import { PerspectiveCamera as PerspectiveCameraType } from 'three';
-import { useTweaks } from 'use-tweaks';
 
 export default function Perspective(props) {
   const camera = useRef<PerspectiveCameraType>();
-  const { far, fov, near } = useTweaks('Perspective Camera', {
+  const { far, fov, near } = useControls('Perspective Camera', {
     fov: { value: 45, min: 1, max: 180 },
     near: { value: 0.1, min: 0.1, max: 50 },
     far: { value: 100, min: 0.1, max: 100 },

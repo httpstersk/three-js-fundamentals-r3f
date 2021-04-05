@@ -1,5 +1,5 @@
+import { useControls } from 'leva';
 import { useRef } from 'react';
-import { makeFolder, useTweaks } from 'use-tweaks';
 import { CONSTANTS } from '../../constants';
 
 export default function RectAreaLight() {
@@ -14,23 +14,17 @@ export default function RectAreaLight() {
     x,
     y,
     z,
-  } = useTweaks('RectArea Light', {
+  } = useControls('RectArea Light', {
     color: CONSTANTS.DEFAULT_LIGHT_COLOR,
     height: { value: 10, min: 0, max: 20 },
     width: { value: 10, min: 0, max: 20 },
     intensity: { value: CONSTANTS.DEFAULT_LIGHT_INTENSITY, min: 0, max: 2 },
-    ...makeFolder(
-      'Positions',
-      {
-        rotationX: { value: 1, min: 0, max: 1 },
-        rotationY: { value: 1, min: 0, max: 1 },
-        rotationZ: { value: 1, min: 0, max: 1 },
-        x: { value: 1, min: -10, max: 10 },
-        y: { value: 1, min: 0, max: 10 },
-        z: { value: 1, min: -10, max: 10 },
-      },
-      false
-    ),
+    rotationX: { value: 1, min: 0, max: 1 },
+    rotationY: { value: 1, min: 0, max: 1 },
+    rotationZ: { value: 1, min: 0, max: 1 },
+    x: { value: 1, min: -10, max: 10 },
+    y: { value: 1, min: 0, max: 10 },
+    z: { value: 1, min: -10, max: 10 },
   });
 
   const lightRef = useRef();
