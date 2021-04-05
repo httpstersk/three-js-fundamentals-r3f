@@ -43,7 +43,7 @@ const InnerScene = ({ cubes }: Props) => (
   </Fragment>
 );
 
-export default function Scene() {
+export default function Scene(controlsProps) {
   return (
     <Canvas>
       <PerspectiveCamera />
@@ -52,7 +52,7 @@ export default function Scene() {
         <InnerScene cubes={CUBES} />
       </RenderTargetCube>
 
-      <OrbitControls />
+      <OrbitControls {...controlsProps} />
     </Canvas>
   );
 }

@@ -5,7 +5,7 @@ import PerspectiveCamera from '../cameras/PerspectiveCamera';
 import { Cube, Plane, Room, Sphere } from '../components';
 import { PointLightWithHelper } from '../lights';
 
-export default function Example4() {
+export default function Example4(controlsProps) {
   return (
     <Canvas camera={{ position: [0, 10, 20] }} shadowMap>
       <Suspense fallback={null}>
@@ -19,7 +19,7 @@ export default function Example4() {
 
       <PointLightWithHelper />
 
-      <OrbitControls target={[0, 5, 0]} />
+      <OrbitControls target={[0, 5, 0]} {...controlsProps} />
     </Canvas>
   );
 }

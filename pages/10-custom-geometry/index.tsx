@@ -21,7 +21,7 @@ const CUBES = [
   },
 ];
 
-export default function Scene() {
+export default function Scene(controlsProps) {
   return (
     <Canvas
       camera={{ aspect: 2, far: 100, fov: 75, near: 0.1, position: [0, 0, 5] }}
@@ -38,7 +38,7 @@ export default function Scene() {
         position={[-1, 2, 4]}
       />
 
-      <OrbitControls />
+      <OrbitControls {...controlsProps} />
     </Canvas>
   );
 }

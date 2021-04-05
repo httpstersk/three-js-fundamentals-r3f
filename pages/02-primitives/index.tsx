@@ -23,7 +23,7 @@ import {
   Tube,
 } from './components';
 
-export default function Scene() {
+export default function Scene(controlsProps) {
   return (
     <Canvas
       camera={{
@@ -122,7 +122,7 @@ export default function Scene() {
         position={[-1, 2, 4]}
       />
 
-      <OrbitControls />
+      <OrbitControls {...controlsProps} />
     </Canvas>
   );
 }

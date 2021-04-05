@@ -4,4 +4,8 @@ const withTM = require('next-transpile-modules')([
   'postprocessing',
 ]);
 
-module.exports = withTM();
+module.exports = withTM({
+  future: {
+    webpack5: true,
+  },
+});

@@ -6,7 +6,7 @@ import OrthographicCamera from './cameras/OrthographicCamera';
 import { Cube, Plane, Sphere } from './components';
 import { DirectionalLight } from './lights';
 
-export default function Scene() {
+export default function Scene(controlsProps) {
   return (
     <Canvas>
       <Suspense fallback={null}>
@@ -20,7 +20,7 @@ export default function Scene() {
 
       <DirectionalLight />
 
-      <OrbitControls target={[0, 5, 0]} />
+      <OrbitControls target={[0, 5, 0]} {...controlsProps} />
     </Canvas>
   );
 }

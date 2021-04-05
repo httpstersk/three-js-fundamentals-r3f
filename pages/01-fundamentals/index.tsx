@@ -20,7 +20,7 @@ const CUBES = [
   },
 ];
 
-export default function Scene() {
+export default function Scene(controlsProps) {
   return (
     <Canvas camera={{ position: [0, 0, 2] }}>
       {CUBES.map(({ _id, color, x }) => {
@@ -33,7 +33,7 @@ export default function Scene() {
         position={[-1, 2, 4]}
       />
 
-      <OrbitControls />
+      <OrbitControls {...controlsProps} />
     </Canvas>
   );
 }

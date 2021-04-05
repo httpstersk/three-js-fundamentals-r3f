@@ -11,7 +11,7 @@ import {
   SpotLight,
 } from './lights';
 
-export default function Scene() {
+export default function Scene(controlsProps) {
   return (
     <Canvas
       camera={{
@@ -35,7 +35,7 @@ export default function Scene() {
       <RectAreaLight />
       <SpotLight />
 
-      <OrbitControls target={[0, 5, 0]} />
+      <OrbitControls target={[0, 5, 0]} {...controlsProps} />
     </Canvas>
   );
 }

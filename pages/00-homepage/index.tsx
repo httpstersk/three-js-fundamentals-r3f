@@ -2,7 +2,7 @@ import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
 import Cube from './Cube';
 
-export default function HomepageScene() {
+export default function HomepageScene(controlsProps) {
   return (
     <Canvas camera={{ position: [0, 0, 2] }}>
       <Cube />
@@ -16,7 +16,7 @@ export default function HomepageScene() {
       <color args={['#010101']} attach="background" />
       <fog attach="fog" color="#010101" far={2} near={1} />
 
-      <OrbitControls />
+      <OrbitControls {...controlsProps} />
     </Canvas>
   );
 }

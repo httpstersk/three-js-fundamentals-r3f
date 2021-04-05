@@ -21,7 +21,7 @@ const CUBES = [
   },
 ];
 
-export default function Scene() {
+export default function Scene(controlsProps) {
   return (
     <Canvas>
       {CUBES.map(({ _id, color, x }) => {
@@ -38,7 +38,7 @@ export default function Scene() {
 
       <Fog />
 
-      <OrbitControls />
+      <OrbitControls {...controlsProps} />
     </Canvas>
   );
 }

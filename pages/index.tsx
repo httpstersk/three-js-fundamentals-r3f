@@ -36,7 +36,7 @@ export default function Home() {
         />
       </Head>
 
-      <HomepageScene />
+      <HomepageScene zoomSpeed={0.25} />
 
       <main className={styles.main}>
         <svg

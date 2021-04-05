@@ -6,7 +6,7 @@ import PerspectiveCamera from '../cameras/PerspectiveCamera';
 import { BouncingSpheres, Plane } from '../components';
 import { DirectionalLight, HemisphereLight } from '../lights';
 
-export default function Example1() {
+export default function Example1(controlsProps) {
   return (
     <Canvas camera={{ position: [0, 10, 20] }}>
       <color args={[255, 255, 255]} attach="background" />
@@ -21,7 +21,7 @@ export default function Example1() {
       <DirectionalLight />
       <HemisphereLight />
 
-      <OrbitControls target={[0, 5, 0]} />
+      <OrbitControls target={[0, 5, 0]} {...controlsProps} />
     </Canvas>
   );
 }

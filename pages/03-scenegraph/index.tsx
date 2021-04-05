@@ -2,7 +2,7 @@ import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
 import SolarSystem from './components/SolarSystem';
 
-export default function Scene() {
+export default function Scene(controlsProps) {
   return (
     <Canvas
       camera={{
@@ -16,7 +16,7 @@ export default function Scene() {
     >
       <pointLight color={0xffffff} intensity={3} />
       <SolarSystem />
-      <OrbitControls />
+      <OrbitControls {...controlsProps} />
     </Canvas>
   );
 }

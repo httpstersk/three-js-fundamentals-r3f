@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { Canvas } from 'react-three-fiber';
 import { SixTextures } from './components';
 
-export default function Scene() {
+export default function Scene(controlsProps) {
   return (
     <Canvas
       camera={{
@@ -18,7 +18,7 @@ export default function Scene() {
         <SixTextures />
       </Suspense>
 
-      <OrbitControls />
+      <OrbitControls {...controlsProps} />
     </Canvas>
   );
 }
