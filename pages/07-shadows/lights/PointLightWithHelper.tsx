@@ -1,5 +1,5 @@
 import { useHelper } from '@react-three/drei';
-import { useControls } from 'leva';
+import { folder, useControls } from 'leva';
 import { useRef, useState } from 'react';
 import { PointLight, PointLightHelper } from 'three';
 import CONSTANTS from '@/constants/.';
@@ -15,9 +15,14 @@ export default function PointLightWithHelper() {
       distance: { value: 0, min: 0, max: 40 },
       near: { value: 0.5, min: 0.1, max: 50 },
       far: { value: 50, min: 0.1, max: 50 },
-      x: { value: 0, min: -10, max: 10 },
-      y: { value: 10, min: 0, max: 10 },
-      z: { value: 0, min: -10, max: 10 },
+      Positions: folder(
+        {
+          x: { value: 0, min: -10, max: 10 },
+          y: { value: 10, min: 0, max: 10 },
+          z: { value: 0, min: -10, max: 10 },
+        },
+        { collapsed: true }
+      ),
       'Show Helper': {
         value: !isHelperLightOn,
         onChange: () => toggleLightHelper((state) => !state),

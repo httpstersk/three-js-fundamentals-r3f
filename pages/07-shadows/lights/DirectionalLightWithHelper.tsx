@@ -1,5 +1,5 @@
 import { useHelper } from '@react-three/drei';
-import { useControls } from 'leva';
+import { folder, useControls } from 'leva';
 import { useEffect, useRef, useState } from 'react';
 import { useThree } from 'react-three-fiber';
 import {
@@ -38,12 +38,22 @@ export default function DirectionalLightWithHelper() {
     near: { value: 0.1, min: 0.1, max: 50 },
     far: { value: 50, min: 0.1, max: 50 },
     zoom: { value: 1, min: 0.01, max: 1.5 },
-    targetX: { value: -4, min: -10, max: 10 },
-    targetY: { value: 0, min: 0, max: 10 },
-    targetZ: { value: -4, min: -10, max: 10 },
-    x: { value: 0, min: -10, max: 10 },
-    y: { value: 10, min: 0, max: 10 },
-    z: { value: 10, min: -10, max: 10 },
+    Target: folder(
+      {
+        targetX: { value: -4, min: -10, max: 10 },
+        targetY: { value: 0, min: 0, max: 10 },
+        targetZ: { value: -4, min: -10, max: 10 },
+      },
+      { collapsed: true }
+    ),
+    Positions: folder(
+      {
+        x: { value: 0, min: -10, max: 10 },
+        y: { value: 10, min: 0, max: 10 },
+        z: { value: 10, min: -10, max: 10 },
+      },
+      { collapsed: true }
+    ),
     'Show Light Helper': {
       value: !isHelperLightOn,
       onChange: () => toggleLightHelper((state) => !state),

@@ -1,4 +1,4 @@
-import { useControls } from 'leva';
+import { folder, useControls } from 'leva';
 import { useRef } from 'react';
 import CONSTANTS from '@/constants/.';
 
@@ -19,12 +19,22 @@ export default function RectAreaLight() {
     height: { value: 10, min: 0, max: 20 },
     width: { value: 10, min: 0, max: 20 },
     intensity: { value: CONSTANTS.DEFAULT_LIGHT_INTENSITY, min: 0, max: 2 },
-    rotationX: { value: 1, min: 0, max: 1 },
-    rotationY: { value: 1, min: 0, max: 1 },
-    rotationZ: { value: 1, min: 0, max: 1 },
-    x: { value: 1, min: -10, max: 10 },
-    y: { value: 1, min: 0, max: 10 },
-    z: { value: 1, min: -10, max: 10 },
+    Rotations: folder(
+      {
+        rotationX: { value: 1, min: 0, max: 1 },
+        rotationY: { value: 1, min: 0, max: 1 },
+        rotationZ: { value: 1, min: 0, max: 1 },
+      },
+      { collapsed: true }
+    ),
+    Positions: folder(
+      {
+        x: { value: 1, min: -10, max: 10 },
+        y: { value: 1, min: 0, max: 10 },
+        z: { value: 1, min: -10, max: 10 },
+      },
+      { collapsed: true }
+    ),
   });
 
   const lightRef = useRef();
