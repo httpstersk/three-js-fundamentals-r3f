@@ -1,14 +1,5 @@
-import Example4 from './examples/Example4';
+import Scene from '@/lessons/07-shadows/';
 
-export const NUM_SPHERES = 15;
-
-export default function Scene() {
-  return (
-    <>
-      {/* <Example1 /> */}
-      {/* <Example2 /> */}
-      {/* <Example3 /> */}
-      <Example4 />
-    </>
-  );
+export default function Shadows({ ...props }) {
+  return <Scene {...props} />;
 }

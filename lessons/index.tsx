@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import HomepageScene from './00-homepage';
 import styles from '../styles/Home.module.css';
-import HomepageScene from './HomepageScene';
 
 export default function Home() {
   return (

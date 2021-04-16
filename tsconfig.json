@@ -16,6 +16,7 @@
     "jsx": "preserve",
     "paths": {
       "@/constants/*": ["constants/*"],
+      "@/lessons/*": ["lessons/*"],
       "@/utils/*": ["utils/*"]
     }
   },
