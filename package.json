@@ -10,7 +10,7 @@
   "dependencies": {
     "@react-three/drei": "^3.11.2",
     "@react-three/flex": "^0.5.2",
-    "leva": "^0.9.4",
+    "leva": "^0.9.8",
     "next": "10.1.3",
     "postprocessing": "^6.21.2",
     "randomcolor": "^0.6.2",
